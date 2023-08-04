@@ -1,0 +1,85 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-image: url(../assets/bg.jpg);
+  background-size: cover;
+  font-family: "Open sans";
+}
+
+#logo{ /*imagem do divine oracle*/
+  width: 15vw;
+  padding-left: 35px;
+  justify-content: flex-start;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  background-color: #3d5c78;
+  height: 6.3vw;
+  justify-content: space-between;
+}
+
+nav{ /*todo o navigation*/ 
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.navigation{ /*navigation com home e about*/
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+  padding: 20px;
+}
+
+.bi-search{ /*lupa de pesquisa*/
+  color: white;
+  padding-top: 10px;
+}
+
+.search-icon{ /*classe div icone*/
+  position: absolute;
+  top: 6%;
+  right: 14.2vw;
+  transform: translateY(-50%);
+}
+
+#search{ /*input de pesquisa*/
+  background-color: transparent;
+  border: none;
+  outline: none;  
+  border-bottom: 1px solid #ffffff;
+}
+
+.search-input{ /*classe div input de pesquisa*/
+  font-size: 15px;
+  position: relative;
+  padding: 30px 20px 0px 4px;
+}
+
+#search::placeholder{
+  color: white;
+  padding: 0px 0px 80px 0px;
+}
+
+footer{
+  background-color: #3d5c78;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  height: 6.5vw;
+}
+
+footer p{ /*texto no footer*/ 
+  padding-top: 10px;
+}
+
+.icon-github{
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 8px 450px 0px 450px;
+}
