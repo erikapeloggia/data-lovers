@@ -2,15 +2,19 @@
   margin: 0;
   padding: 0;
 }
+
 body{
   background-image: url(../assets/bg.jpg);
+  height: auto;
   background-size: cover;
+  background-repeat: no-repeat;
   font-family: "Open sans";
 }
 
 #logo{ /*imagem do divine oracle*/
-  width: 15vw;
-  padding-left: 35px;
+  width: 13vw;
+  padding: 8px 24px;
+
   justify-content: flex-start;
 }
 
@@ -29,7 +33,8 @@ nav{ /*todo o navigation*/
 }
 
 .navigation{ /*navigation com home e about*/
-  font-size: 18px;
+  font-size: 17px;
+  font-weight: bold;
   text-decoration: none;
   color: white;
   padding: 20px;
@@ -40,24 +45,25 @@ nav{ /*todo o navigation*/
   padding-top: 10px;
 }
 
-.search-icon{ /*classe div icone*/
-  position: absolute;
-  top: 6%;
-  right: 14.2vw;
-  transform: translateY(-50%);
-}
-
 #search{ /*input de pesquisa*/
   background-color: transparent;
   border: none;
-  outline: none;  
-  border-bottom: 1px solid #ffffff;
+  outline: none;
+  color: white;  
+  font-size: 14px;
 }
 
 .search-input{ /*classe div input de pesquisa*/
-  font-size: 15px;
   position: relative;
-  padding: 30px 20px 0px 4px;
+  padding: 10px;
+  margin: 22px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.fa-solid{
+  margin-right: 10px;
+  color: white;
 }
 
 #search::placeholder{
@@ -65,12 +71,70 @@ nav{ /*todo o navigation*/
   padding: 0px 0px 80px 0px;
 }
 
+main{
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.flip-container {
+  display: inline-block;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px; 
+}
+
+.flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-container:hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.cards-front, .cards-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.cards-back {
+  background-color: white;
+  background-image: url(../assets/cards-back.png);
+  transform: rotateY(180deg);
+}
+
+#cards-container{
+  display: grid; 
+  grid-template-columns: repeat(3, 220px);  
+  grid-gap: 50px;
+}
+
+#cards-container img{
+  display: flex;
+  width: 100%;
+  height: auto;
+  border: 5px solid white ;
+  border-radius: 10px;
+  place-items: center;
+  align-items: center;
+}
+
 footer{
+  bottom: 0;
+  /* position: fixed; */
   background-color: #3d5c78;
   font-size: 15px;
   text-align: center;
   color: white;
   height: 6.5vw;
+  width: 100%;
 }
 
 footer p{ /*texto no footer*/ 
@@ -80,6 +144,10 @@ footer p{ /*texto no footer*/
 .icon-github{
   color: white;
   display: flex;
-  justify-content: space-evenly;
-  padding: 8px 450px 0px 450px;
+  justify-content: space-around;
+  /* padding: 8px 500px 0px 500px; */
+}
+
+.bi-github{
+  color: white;
 }
