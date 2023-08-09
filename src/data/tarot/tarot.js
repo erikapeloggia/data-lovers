@@ -23,7 +23,7 @@ export default {
     {
       "type": "major",
       "name_short": "ar02",
-      "name": "The High Priestess",
+      "name": "The High\n" + "Priestess",
       "value": 2,
       "meaning_up": "Secrets, mystery, the future as yet unrevealed; the woman who interests the Querent, if male; the Querent herself, if female; silence, tenacity; mystery, wisdom, science.",
       "meaning_rev": "Passion, moral or physical ardour, conceit, surface knowledge.",
@@ -103,7 +103,7 @@ export default {
     {
       "type": "major",
       "name_short": "ar10",
-      "name": "Wheel Of Fortune",
+      "name": "Wheel  Of\n" + "Fortune", 
       "value": 10,
       "meaning_up": "Destiny, fortune, success, elevation, luck, felicity.",
       "meaning_rev": "Increase, abundance, superfluity.",
@@ -123,7 +123,7 @@ export default {
     {
       "type": "major",
       "name_short": "ar12",
-      "name": "The Hanged Man",
+      "name": "The Hanged\n" + "Man",
       "value": 12,
       "meaning_up": "Wisdom, circumspection, discernment, trials, sacrifice, intuition, divination, prophecy.",
       "meaning_rev": "Selfishness, the crowd, body politic.",
@@ -203,7 +203,7 @@ export default {
     {
       "type": "major",
       "name_short": "ar20",
-      "name": "The Last Judgment",
+      "name": "The Last\n" + "Judgment",
       "value": 20,
       "meaning_up": "Change of position, renewal, outcome. Another account specifies total loss though lawsuit.",
       "meaning_rev": "Weakness, pusillanimity, simplicity; also deliberation, decision, sentence.",
@@ -540,7 +540,7 @@ export default {
       "img": "../assets/deck/pentacles/AceOfPentacles.png"
     },
     {
-      "name": "Two of Pentacles",
+      "name": "Two of\n" + "Pentacles",
       "name_short": "pe02",
       "value": 2,
       "suit": "pentacles",
@@ -551,7 +551,7 @@ export default {
       "img": "../assets/deck/pentacles/TwoOfPentacles.png"
     },
     {
-      "name": "Three of Pentacles",
+      "name": "Three of\n" + "Pentacles",
       "name_short": "pe03",
       "value": 3,
       "suit": "pentacles",
@@ -562,7 +562,7 @@ export default {
       "img": "../assets/deck/pentacles/ThreeOfPentacles.png"
     },
     {
-      "name": "Four of Pentacles",
+      "name": "Four of\n" + "Pentacles",
       "name_short": "pe04",
       "value": 4,
       "suit": "pentacles",
@@ -573,7 +573,7 @@ export default {
       "img": "../assets/deck/pentacles/FourOfPentacles.png"
     },
     {
-      "name": "Five of Pentacles",
+      "name": "Five of\n" + "Pentacles",
       "name_short": "pe05",
       "value": 5,
       "suit": "pentacles",
@@ -595,7 +595,7 @@ export default {
       "img": "../assets/deck/pentacles/SixOfPentacles.png"
     },
     {
-      "name": "Seven of Pentacles",
+      "name": "Seven of\n" + "Pentacles",
       "name_short": "pe07",
       "value": 7,
       "suit": "pentacles",
@@ -606,7 +606,7 @@ export default {
       "img": "../assets/deck/pentacles/SevenOfPentacles.png"
     },
     {
-      "name": "Eight of Pentacles",
+      "name": "Eight of\n" + "Pentacles",
       "name_short": "pe08",
       "value": 8,
       "suit": "pentacles",
@@ -617,7 +617,7 @@ export default {
       "img": "../assets/deck/pentacles/EightOfPentacles.png"
     },
     {
-      "name": "Nine of Pentacles",
+      "name": "Nine of\n" + "Pentacles",
       "name_short": "pe09",
       "value": 9,
       "suit": "pentacles",
@@ -639,7 +639,7 @@ export default {
       "img": "../assets/deck/pentacles/TenOfPentacles.png"
     },
     {
-      "name": "Page of Pentacles",
+      "name": "Page of\n" + "Pentacles",
       "name_short": "pepa",
       "value": 11,
       "suit": "pentacles",
@@ -650,7 +650,7 @@ export default {
       "img": "../assets/deck/pentacles/PageOfPentacles.png"
     },
     {
-      "name": "Knight of Pentacles",
+      "name": "Knight of\n" + "Pentacles",
       "name_short": "pekn",
       "value": 12,
       "suit": "pentacles",
@@ -661,7 +661,7 @@ export default {
       "img": "../assets/deck/pentacles/KnightofPentacles.png"
     },
     {
-      "name": "Queen of Pentacles",
+      "name": "Queen of\n" + "Pentacles",
       "name_short": "pequ",
       "value": 13,
       "suit": "pentacles",
@@ -672,7 +672,7 @@ export default {
       "img": "../assets/deck/pentacles/QueenOfPentacles.png"
     },
     {
-      "name": "King of Pentacles",
+      "name": "King of\n" + "Pentacles",
       "name_short": "peki",
       "value": 14,
       "suit": "pentacles",
@@ -804,7 +804,7 @@ export default {
       "img": "../assets/deck/swords/PageOfSwords.png"
     },
     {
-      "name": "Knight of Swords",
+      "name": "Knight of\n" + "Swords",
       "name_short": "swkn",
       "value": 12,
       "suit": "swords",
@@ -815,7 +815,7 @@ export default {
       "img": "../assets/deck/swords/KnightOfSwords.png"
     },
     {
-      "name": "Queen of Swords",
+      "name": "Queen of\n" + "Swords",
       "name_short": "swqu",
       "value": 13,
       "suit": "swords",

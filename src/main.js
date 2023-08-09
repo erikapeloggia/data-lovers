@@ -16,22 +16,25 @@ input.addEventListener("blur", () => {
 
 for (let i = 0; i < data.cards.length; i++) {
 const cardsContainer = document.querySelector("#cards-container");
-cardsContainer.classList.add("flip-container");
+const flipContainer = document.createElement("div");
+flipContainer.classList.add("flip-container");
 
 const imgElement = document.createElement("img");
 imgElement.src = data.cards[i].img;
 imgElement.alt = data.cards[i].name;
 imgElement.classList.add("cards-front");
-cardsContainer.appendChild(imgElement);
+flipContainer.appendChild(imgElement);
 
 const flipper = document.createElement("div");
 flipper.classList.add("flipper");
-cardsContainer.appendChild(flipper);
+flipContainer.appendChild(flipper);
 flipper.appendChild(imgElement);
 
 const divBack = document.createElement("div");
 divBack.classList.add("cards-back");
 flipper.appendChild(divBack);
+
+cardsContainer.appendChild(flipContainer);
 
 const name = document.createElement("p");
 name.classList.add("card-name");
@@ -54,16 +57,20 @@ btnLearn.textContent = "Learn more";
 divBack.appendChild(btnLearn);
 
 const modal = document.querySelector("#modal");
+const modalContainer = document.createElement("div");
+modalContainer.classList.add("modal-container");
+modal.appendChild(modalContainer);
+
 
 const modalHeader = document.createElement("div");
 modalHeader.classList.add("modal-header");
 modalHeader.textContent = "About " + data.cards[i].name;
-modal.appendChild(modalHeader);
+modalContainer.appendChild(modalHeader);
 
 const closeModal = document.createElement("button");
 closeModal.classList.add("close-modal");
 // closeModal.textContent = "X";
-modal.appendChild(closeModal);
+modalContainer.appendChild(closeModal);
 
 const imgBtnModal = document.createElement("img");
 closeModal.src = "../assets/close-modal.png";
@@ -74,11 +81,11 @@ const imgModal = document.createElement("img");
 imgModal.src = data.cards[i].img;
 imgModal.alt = data.cards[i].name;
 imgModal.classList.add("img-modal");
-modal.appendChild(imgModal);
+modalContainer.appendChild(imgModal);
 
 const infoCard = document.createElement("div");
 infoCard.classList.add("info-card");
-modal.appendChild(infoCard);
+modalContainer.appendChild(infoCard);
 
 const meaningUp = document.createElement("p");
 meaningUp.classList.add("meaning-up");
@@ -107,12 +114,3 @@ const toggleModal = () => {
 });
 }
 
-// const descElement = document.createElement('desc');
-// descElement.textContent = data.cards[i].desc;
-// description.appendChild(descElement);
-
-// const images = data.cards.map(card => card.img);
-// console.log(images);
-
-// const names = data.cards.map(card => card.name);
-// console.log(names);
