@@ -1,9 +1,9 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-body{
+body {
   background-image: url(../assets/bg.jpg);
   height: auto;
   background-size: cover;
@@ -11,14 +11,15 @@ body{
   font-family: "Open sans";
 }
 
-#logo{ /*imagem do divine oracle*/
+#logo {
+  /*imagem do divine oracle*/
   width: 13vw;
   padding: 8px 24px;
 
   justify-content: flex-start;
 }
 
-header{
+header {
   display: flex;
   flex-direction: row;
   background-color: #3d5c78;
@@ -26,13 +27,15 @@ header{
   justify-content: space-between;
 }
 
-nav{ /*todo o navigation*/ 
+nav {
+  /*todo o navigation*/
   display: flex;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
 }
 
-.navigation{ /*navigation com home e about*/
+.navigation {
+  /*navigation com home e about*/
   font-size: 17px;
   font-weight: bold;
   text-decoration: none;
@@ -40,20 +43,23 @@ nav{ /*todo o navigation*/
   padding: 20px;
 }
 
-.bi-search{ /*lupa de pesquisa*/
+.bi-search {
+  /*lupa de pesquisa*/
   color: white;
   padding-top: 10px;
 }
 
-#search{ /*input de pesquisa*/
+#search {
+  /*input de pesquisa*/
   background-color: transparent;
   border: none;
   outline: none;
-  color: white;  
+  color: white;
   font-size: 14px;
 }
 
-.search-input{ /*classe div input de pesquisa*/
+.search-input {
+  /*classe div input de pesquisa*/
   position: relative;
   padding: 10px;
   margin: 22px;
@@ -61,17 +67,17 @@ nav{ /*todo o navigation*/
   border-radius: 10px;
 }
 
-.fa-solid{
+.fa-solid {
   margin-right: 10px;
   color: white;
 }
 
-#search::placeholder{
+#search::placeholder {
   color: white;
   padding: 0px 0px 80px 0px;
 }
 
-main{
+main {
   display: grid;
   grid-template-columns: 0.4fr 1fr;
   margin-top: 40px;
@@ -82,7 +88,7 @@ main{
   display: inline-block;
   width: 300px;
   height: 200px;
-  perspective: 1000px; 
+  perspective: 1000px;
 }
 
 .flipper {
@@ -97,7 +103,8 @@ main{
   transform: rotateY(180deg);
 }
 
-.cards-front, .cards-back {
+.cards-front,
+.cards-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -106,29 +113,202 @@ main{
 
 .cards-back {
   background-color: white;
-  background-image: url(../assets/cards-back.png);
+  background-image: url(../assets/card-back.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 18.6vw;
+  margin-right: 21vw;
+  border: 5px solid white;
+  border-radius: 10px;
   transform: rotateY(180deg);
 }
 
-#cards-container{
-  display: grid; 
-  grid-template-columns: repeat(3, 220px);  
+#cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 220px);
   grid-gap: 50px;
 }
 
-#cards-container img{
+#cards-container img {
   display: flex;
   width: 100%;
   height: auto;
-  border: 5px solid white ;
+  border: 5px solid white;
   border-radius: 10px;
   place-items: center;
   align-items: center;
 }
 
-footer{
+.card-name{
+  display: flex;
+  font-size: 25px;
+  font-weight: bold;
+  color: #3d5c78;
+  justify-content: center;
+  align-items: center;
+  margin-top: 19%;
+  padding-top: 10%;
+  
+}
+
+.card-info {
+  display: flex;
+  font-size: 25px;
+  font-weight: bold;
+  color: #3d5c78;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  padding-top: 10%;
+  margin: 0%;
+  white-space: pre-line;
+}
+
+.card-button {
+  background-color: #5885AC;
+  color: white;
+  border: 5px solid #5885AC;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  width: 6vw;
+  height: 2vw;
+  margin-top: 10%;
+  margin-left: 25%;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.card-button:hover {
+  filter: brightness(0.8);
+}
+
+.close-modal {
+  display:grid;
+  justify-self: end;
+  padding: 0.6rem 1.2rem;
+  /* background-color: transparent; */
+  /* color: #fff; */
+  height: 10px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.close-modal:hover {
+  opacity: 1;
+}
+
+#fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+#modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 45vw;
+  max-width: 90%;
+  background-color: rgba(61, 92, 120, 0.9);
+  color: #fff;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  grid-template-rows: 0.2fr 1fr;
+  grid-column: 1 / span 2;
+  grid-row: 1 / 2;
+}
+
+.info-card {
+  display:grid;
+  width: 29vw;
+  height:20vw;
+  overflow: auto;
+  padding: 10px;
+  justify-self: center;
+  align-self: center;
+}
+
+.meaning-up::before {
+  content: "Meaning up: ";
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  
+}
+.meaning-rev::before {
+  content: "Meaning reverse: ";
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+}
+
+.desc::before {
+  content: "Description: ";
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+}
+
+.meaning-up, .meaning-rev, .desc {
+  margin-bottom: 1rem;
+  font-size: 20px;
+  text-align: justify;
+ 
+}
+
+#fade,
+#modal {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.img-modal {
+  display: grid;
+  width: 80%;
+  height: 18.6vw;
+  border: 5px solid white;
+  border-radius: 10px;
+  justify-self: center;
+  align-self: center; 
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+
+
+#modal.hide,
+#fade.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#modal.hide {
+  top: 0;
+}
+
+footer {
   bottom: 0;
-  /* position: fixed; */
+  position: fixed;
   background-color: #3d5c78;
   font-size: 15px;
   text-align: center;
@@ -137,17 +317,17 @@ footer{
   width: 100%;
 }
 
-footer p{ /*texto no footer*/ 
+footer p { /* texto no footer */
   padding-top: 10px;
 }
 
-.icon-github{
+.icon-github {
   color: white;
   display: flex;
   justify-content: space-around;
-  /* padding: 8px 500px 0px 500px; */
+  padding: 8px 500px 0px 500px;
 }
 
-.bi-github{
+.bi-github {
   color: white;
 }
