@@ -14,13 +14,13 @@ input.addEventListener("blur", () => {
   }
 });
 
-// for (let i = 0; i < data.cards.length; i++) {
+for (let i = 0; i < data.cards.length; i++) {
 const cardsContainer = document.querySelector("#cards-container");
 cardsContainer.classList.add("flip-container");
 
 const imgElement = document.createElement("img");
-imgElement.src = data.cards[0].img;
-imgElement.alt = data.cards[0].name;
+imgElement.src = data.cards[i].img;
+imgElement.alt = data.cards[i].name;
 imgElement.classList.add("cards-front");
 cardsContainer.appendChild(imgElement);
 
@@ -35,17 +35,17 @@ flipper.appendChild(divBack);
 
 const name = document.createElement("p");
 name.classList.add("card-name");
-name.textContent = data.cards[0].name;
+name.textContent = data.cards[i].name;
 divBack.appendChild(name);
 
 const value = document.createElement("p");
 value.classList.add("card-info");
-value.textContent = "Value: " + data.cards[0].value;
+value.textContent = "Value: " + data.cards[i].value;
 divBack.appendChild(value);
 
 const type = document.createElement("p");
 type.classList.add("card-info");
-type.textContent = "Arcane:\n" + data.cards[0].type;
+type.textContent = "Arcane:\n" + data.cards[i].type;
 divBack.appendChild(type);
 
 const btnLearn = document.createElement("button");
@@ -57,7 +57,7 @@ const modal = document.querySelector("#modal");
 
 const modalHeader = document.createElement("div");
 modalHeader.classList.add("modal-header");
-modalHeader.textContent = "About " + data.cards[0].name;
+modalHeader.textContent = "About " + data.cards[i].name;
 modal.appendChild(modalHeader);
 
 const closeModal = document.createElement("button");
@@ -71,8 +71,8 @@ closeModal.alt = "Button close modal";
 closeModal.appendChild(imgBtnModal);
 
 const imgModal = document.createElement("img");
-imgModal.src = data.cards[0].img;
-imgModal.alt = data.cards[0].name;
+imgModal.src = data.cards[i].img;
+imgModal.alt = data.cards[i].name;
 imgModal.classList.add("img-modal");
 modal.appendChild(imgModal);
 
@@ -82,17 +82,17 @@ modal.appendChild(infoCard);
 
 const meaningUp = document.createElement("p");
 meaningUp.classList.add("meaning-up");
-meaningUp.textContent = data.cards[0].meaning_up;
+meaningUp.textContent = data.cards[i].meaning_up;
 infoCard.appendChild(meaningUp);
 
 const meaningRev = document.createElement("p");
 meaningRev.classList.add("meaning-rev");
-meaningRev.textContent = data.cards[0].meaning_rev;
+meaningRev.textContent = data.cards[i].meaning_rev;
 infoCard.appendChild(meaningRev);
 
 const desc = document.createElement("p");
 desc.classList.add("desc");
-desc.textContent = data.cards[0].desc;
+desc.textContent = data.cards[i].desc;
 infoCard.appendChild(desc);
 
 const fade = document.querySelector("#fade");
@@ -105,7 +105,7 @@ const toggleModal = () => {
 [btnLearn, closeModal, fade].forEach((el) => {
   el.addEventListener("click", () => toggleModal());
 });
-// }
+}
 
 // const descElement = document.createElement('desc');
 // descElement.textContent = data.cards[i].desc;
