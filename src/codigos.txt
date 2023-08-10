@@ -1,216 +1,156 @@
-style.CSS - branch main
+const flipper = document.createElement("div");
+flipper.classList.add("flipper");
+flipContainer.appendChild(flipper);
+flipper.appendChild(imgElement);
 
-*{
-  margin: 0;
-  padding: 0;
-}
-body{
-  background-image: url(../assets/bg.jpg);
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  font-family: "Open sans";
-}
+const divBack = document.createElement("div");
+divBack.classList.add("cards-back");
+flipper.appendChild(divBack);
 
-#logo{ /*imagem do divine oracle*/
-  width: 15vw;
-  padding-left: 35px;
-  justify-content: flex-start;
-}
+cardsContainer.appendChild(flipContainer);
 
-header{
-  display: flex;
-  flex-direction: row;
-  background-color: #3d5c78;
-  height: 6.3vw;
-  justify-content: space-between;
-}
+const name = document.createElement("p");
+name.classList.add("card-name");
+name.textContent = data.cards[i].name;
+divBack.appendChild(name);
 
-.mobile-menu{
-  display: none;
-}
+const value = document.createElement("p");
+value.classList.add("card-info");
+value.textContent = "Value: " + data.cards[i].value;
+divBack.appendChild(value);
 
-.mobile-menu ul{
-  list-style: none;
+const type = document.createElement("p");
+type.classList.add("card-info");
+type.textContent = "Arcane:\n" + data.cards[i].type;
+divBack.appendChild(type);
 
-}
+const btnLearn = document.createElement("button");
+btnLearn.classList.add("card-button");
+btnLearn.textContent = "Learn more";
+divBack.appendChild(btnLearn);
 
-#menu-list { /*botão do menu list mobile*/
-  display: none;
-  background-color: transparent;
-  border: none;
-}
-
-#icon-list{ /*icone menu list mobile*/
-  display: none;
-  font-size: 20px;
-}
-
-nav{ /*todo o navigation*/ 
-  display: flex;
-  justify-content: center;
-  align-items: center;  
-}
-
-.navigation{ /*navigation com home e about*/
-  font-size: 18px;
-  text-decoration: none;
-  color: white;
-  padding: 20px;
-}
-
-.bi-search{ /*lupa de pesquisa*/
-  color: white;
-  padding-top: 10px;
-}
-
-.search-icon{ /*classe div icone*/
-  position: absolute;
-  top: 6%;
-  right: 14.2vw;
-  transform: translateY(-50%);
-}
-
-#search{ /*input de pesquisa*/
-  background-color: transparent;
-  border: none;
-  outline: none;  
-  border-bottom: 1px solid #ffffff;
-}
-
-.search-input{ /*classe div input de pesquisa*/
-  font-size: 15px;
-  position: relative;
-  padding: 30px 20px 0px 4px;
-}
-
-#search::placeholder{
-  color: white;
-  padding: 0px 0px 80px 0px;
-}
-
-/* .container {
-  display: grid;
-  height: 100vh;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.2fr 1.5fr 1.5fr 0.2fr;
-  grid-template-areas:
-    "nav nav nav nav"
-    "filters main main main"
-    "filters main main main"
-    "footer footer footer footer";
-  grid-gap: 0.2fr;
-} */
-
-main{
-  display: grid;
-  grid-template-columns: 0.5fr 1fr;
-
-}
-
-.cards-container{
-  /* max-width: 100%; */
-  width: 10vw;
-  height: auto;
-  
-  
-}
-
-footer{
-  bottom: 0;
-  /* position: fixed; */
-  background-color: #3d5c78;
-  font-size: 15px;
-  text-align: center;
-  color: white;
-  height: 6.5vw;
-  width: 100%;
-}
-
-footer p{ /*texto no footer*/ 
-  padding-top: 10px;
-}
-
-.icon-github{
-  color: white;
-  display: flex;
-  justify-content: space-around;
-  padding: 8px 500px 0px 500px;
-}
-
-.bi-github{
-  color: white;
-}
-
-@media (max-width: 767px){
-  
-  /* .mobile-menu{
-    display: block;
-  } */
-
-  .navigation{
-    display: none;
-  }
+const modal = document.querySelector("#modal");
+const modalContainer = document.createElement("div");
+modalContainer.classList.add("modal-container");
+modal.appendChild(modalContainer);
 
 
-}
+const modalHeader = document.createElement("div");
+modalHeader.classList.add("modal-header");
+modalHeader.textContent = "About " + data.cards[i].name;
+modalContainer.appendChild(modalHeader);
 
+const closeModal = document.createElement("button");
+closeModal.classList.add("close-modal");
+closeModal.textContent = "X";
+modalContainer.appendChild(closeModal);
 
+const imgBtnModal = document.createElement("img");
+closeModal.src = "../assets/close-modal.png";
+closeModal.alt = "Button close modal";
+closeModal.appendChild(imgBtnModal);
 
+const imgModal = document.createElement("img");
+imgModal.src = data.cards[i].img;
+imgModal.alt = data.cards[i].name;
+imgModal.classList.add("img-modal");
+modalContainer.appendChild(imgModal);
 
+const infoCard = document.createElement("div");
+infoCard.classList.add("info-card");
+modalContainer.appendChild(infoCard);
 
-@media (min-width: 768px) and (max-width: 1023px) {
+const meaningUp = document.createElement("p");
+meaningUp.classList.add("meaning-up");
+meaningUp.textContent = data.cards[i].meaning_up;
+infoCard.appendChild(meaningUp);
 
-  header{
-    height: 7vw;
-  }
+const meaningRev = document.createElement("p");
+meaningRev.classList.add("meaning-rev");
+meaningRev.textContent = data.cards[i].meaning_rev;
+infoCard.appendChild(meaningRev);
 
-  #logo{
-    padding-top: 7px;
+const desc = document.createElement("p");
+desc.classList.add("desc");
+desc.textContent = data.cards[i].desc;
+infoCard.appendChild(desc);
+
+const fade = document.querySelector("#fade");
+
+const toggleModal = () => {
+  modal.classList.toggle("hide");
+  fade.classList.toggle("hide");
+};
+
+[btnLearn, closeModal, fade].forEach((el) => {
+  el.addEventListener("click", (event) => {
+    const modal = document.querySelector("#modal");
+    const modalContainer = document.createElement("div");
+    modalContainer.classList.add("modal-container");
+    modal.appendChild(modalContainer);
     
+    
+    const modalHeader = document.createElement("div");
+    modalHeader.classList.add("modal-header");
+    modalHeader.textContent = "About " + "bia";
+    modalContainer.appendChild(modalHeader);
+    
+    const closeModal = document.createElement("button");
+    closeModal.classList.add("close-modal");
+    closeModal.textContent = "X";
+    modalContainer.appendChild(closeModal);
+    
+    const imgBtnModal = document.createElement("img");
+    closeModal.src = "../assets/close-modal.png";
+    closeModal.alt = "Button close modal";
+    closeModal.appendChild(imgBtnModal);
+    
+    const imgModal = document.createElement("img");
+    imgModal.src = "../assets/close-modal.png";
+    imgModal.alt = "bia";
+    imgModal.classList.add("img-modal");
+    modalContainer.appendChild(imgModal);
+    
+    const infoCard = document.createElement("div");
+    infoCard.classList.add("info-card");
+    modalContainer.appendChild(infoCard);
+    
+    const meaningUp = document.createElement("p");
+    meaningUp.classList.add("meaning-up");
+    meaningUp.textContent = data.cards[i].meaning_up;
+    infoCard.appendChild(meaningUp);
+    
+    const meaningRev = document.createElement("p");
+    meaningRev.classList.add("meaning-rev");
+    meaningRev.textContent = data.cards[i].meaning_rev;
+    infoCard.appendChild(meaningRev);
+    
+    const desc = document.createElement("p");
+    desc.classList.add("desc");
+    desc.textContent = data.cards[i].desc;
+    infoCard.appendChild(desc);
+    
+    toggleModal()});
 
-  }
-
-  /* .navigation{
-
-  } */
-
-  .search-icon{ /*classe div icone*/
-    top: 40px;
-    right: 20vw;
-  }
-  
-}
-
-main.js 
-
-const cardsFront = document.querySelector('.cards-front');
-// const description = document.querySelector("#desc");
-
-for (let i = 0; i < data.cards.length; i++) {
-
-  const imgElement = document.createElement('img');
-  imgElement.src = data.cards[i].img;
-  imgElement.alt = data.cards[i].name;
-  cardsFront.appendChild(imgElement);
-
-  // const descElement = document.createElement('desc');
-  // descElement.textContent = data.cards[i].desc;
-  // description.appendChild(descElement);
-}
-
-
-const names = data.cards.map(card => card.name);
-console.log(names);
-// Obtém a referência para a div onde queremos exibir os nomes
-const nomesContainer = document.getElementById("nomesContainer");
-
-// Cria um elemento <p> para cada nome e adiciona ao div
-names.forEach(name => {
-    const paragraph = document.createElement("p");
-    paragraph.textContent = name;
-    nomesContainer.appendChild(paragraph);
 });
+}
 
-// const images = data.cards.map(card => card.img);
-// console.log(images);
+
+
+
+let dataTarot = data.cards
+
+document.getElementById("search")
+  
+function searchName(evento) {
+  const name = evento.target.value;
+  const result = searchByName(dataTarot, name);
+  cardsContainer(result);
+}
+document.addEventListener("keyup", searchName);
+console.log(dataTarot);
+
+
+
+
+
