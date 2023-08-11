@@ -5,14 +5,14 @@
 
 body {
   background-image: url(../assets/bg.jpg);
+  background-color: #759ABC;
   height: auto;
   background-size: cover;
   background-repeat: no-repeat;
   font-family: "Open sans";
 }
 
-#logo {
-  /*imagem do divine oracle*/
+#logo {  /*imagem do divine oracle*/
   width: 13vw;
   padding: 8px 24px;
 
@@ -189,15 +189,15 @@ main {
 }
 
 .close-modal {
-  display:grid;
   justify-self: end;
-  padding: 0.6rem 1.2rem;
  background-color: transparent; 
   color: #cfc9c9;
   border: none;
   height: 10px;
+  font-size: 20px;
   cursor: pointer;
   opacity: 0.9;
+  grid-area: close-modal;
 }
 
 .close-modal:hover {
@@ -215,22 +215,25 @@ main {
 }
 
 #modal {
+  display: grid;
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 45vw;
   max-width: 90%;
+  height: 27vw;
   background-color: rgba(61, 92, 120, 0.9);
   color: #fff;
-  padding: 1.2rem;
+  padding: 1.2rem 1.5rem 0.6rem 1.2rem;
   border-radius: 0.5rem;
   z-index: 10;
-  display: grid;
-  grid-template-columns: 0.9fr 1fr;
-  grid-template-rows: 0.2fr 1fr;
-  grid-column: 1 / span 2;
-  grid-row: 1 / 2;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 0.2fr 1fr;
+  grid-template-areas:
+    "close-modal close-modal close-modal" 
+    "modal-header-1 modal-header modal-header"
+    "img-modal info-card info-card";
 }
 
 .info-card {
@@ -238,35 +241,53 @@ main {
   width: 29vw;
   height:20vw;
   overflow: auto;
-  padding: 10px;
+  padding: 12px 10px 10px;
   justify-self: center;
   align-self: center;
+  grid-area: info-card;
+}
+
+.info-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color:#fff;
+  border-radius: 10px;
 }
 
 .meaning-up::before {
   content: "Meaning up: ";
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
   color: #fff;
-  
 }
 .meaning-rev::before {
   content: "Meaning reverse: ";
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
   color: #fff;
 }
 
 .desc::before {
   content: "Description: ";
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
   color: #fff;
 }
 
 .meaning-up, .meaning-rev, .desc {
-  margin-bottom: 1rem;
-  font-size: 20px;
+  margin-bottom: 0.5rem;
+  font-size: 17.5px;
   text-align: justify;
  
 }
@@ -280,26 +301,22 @@ main {
 
 .img-modal {
   display: grid;
-  width: 80%;
-  height: 18.6vw;
+  width: 90%;
+  height: 97%;
   border: 5px solid white;
   border-radius: 10px;
   justify-self: center;
   align-self: center; 
+  grid-area: img-modal;
 }
 
 .modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
   font-size: 20px;
   font-weight: bold;
   color: #fff;
+  grid-area: modal-header;
+  text-align: center;
 }
-
-
 
 #modal.hide,
 #fade.hide {
