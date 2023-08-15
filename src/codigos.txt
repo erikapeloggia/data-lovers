@@ -1,5 +1,52 @@
 
+const suitCheckboxes = document.querySelectorAll('input[type="checkbox"][name^="suit"]');
+const filterMajorCheckbox = document.querySelector('input[name="major"]');
+const filterMinorCheckbox = document.querySelector('input[name="minor"]');
+
+filterMajorCheckbox.addEventListener("change", applyFilter);
+filterMinorCheckbox.addEventListener("change", applyFilter);
+
+suitCheckboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", applySuitFilter);
+});
+
+function applyFilter() {
+  const majorFilter = filterMajorCheckbox.checked;
+  const minorFilter = filterMinorCheckbox.checked;
+
+  const filterOptions = {
+    type: majorFilter && minorFilter ? "" : majorFilter ? "major" : "minor",
+    suits: getSelectedSuits(),
+  };
+
+  const filteredCards = filterCards(data.cards, filterOptions);
+  renderFilteredCards(filteredCards);
+}
+
+function applySuitFilter() {
+  const filterOptions = {
+    type: filterMajorCheckbox.checked && filterMinorCheckbox.checked ? "" : filterMajorCheckbox.checked ? "major" : "minor",
+    suits: getSelectedSuits(),
+  };
+
+  const filteredCards = filterCards(data.cards, filterOptions);
+  renderFilteredCards(filteredCards);
+}
+
+function getSelectedSuits() {
+  return Array.from(suitCheckboxes)
+    .filter((checkbox) => checkbox.checked)
+    .map((checkbox) => checkbox.name.slice(5)); // Remover "suit-" do nome
+}
 
 
 
+// const filterCards = (cards, filterOptions) => {
+//   return cards.filter((card) => {
+//     const typeFilter = !filterOptions.type || card.type === filterOptions.type;
+//     const suitFilter =
+//       !filterOptions.suits.length || filterOptions.suits.includes(card.suit);
 
+//     return typeFilter && suitFilter;
+//   });
+// };
