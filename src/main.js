@@ -1,4 +1,9 @@
-import { searchByName } from "./data.js";
+import {
+  searchByName,
+  filterArcane,
+  filterSuits,
+  numericalOrder,
+} from "./data.js";
 import data from "./data/tarot/tarot.js";
 
 const cardsContainer = document.querySelector("#cards-container");
@@ -79,7 +84,8 @@ function searchName(event) {
 function renderFilteredCards(cards) {
   cardsContainer.innerHTML = "";
   for (const card of cards) {
-    renderCard(card, data.cards.indexOf(card));
+    const index = data.cards.indexOf(card);
+    renderCard(card, index);
   }
 }
 
@@ -142,3 +148,91 @@ function openModal(cardIndex) {
 }
 
 fade.addEventListener("click", toggleModal);
+
+const checkboxes = document.getElementsByName("type");
+
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("click", function () {
+    checkboxes.forEach((cb) => {
+      if (cb !== checkbox) {
+        cb.checked = false;
+      }
+    });
+  });
+});
+
+const arcane = document.getElementById("arcane");
+
+function selectArcane(event, allCards) {
+  const optionArcane = event.target.value;
+
+  if (optionArcane === "") {
+    renderFilteredCards(allCards);
+    return;
+  }
+
+  const optionChose = filterArcane(allCards, optionArcane);
+  renderFilteredCards(optionChose);
+}
+
+arcane.addEventListener("change", (event) => {
+  selectArcane(event, data.cards);
+});
+
+const checkboxesSuits = document.getElementsByName("suit");
+
+checkboxesSuits.forEach((checkbox) => {
+  checkbox.addEventListener("click", function () {
+    checkboxesSuits.forEach((cb) => {
+      if (cb !== checkbox) {
+        cb.checked = false;
+      }
+    });
+  });
+});
+
+const suits = document.getElementById("suits");
+
+function selectSuits(event, allCards) {
+  const optionSuits = event.target.value;
+  if (
+    !checkboxesSuits[0].checked &&
+    !checkboxesSuits[1].checked &&
+    !checkboxesSuits[2].checked &&
+    !checkboxesSuits[3].checked
+  ) {
+    renderFilteredCards(allCards);
+    return;
+  }
+  if (optionSuits === "") {
+    renderFilteredCards(allCards);
+    return;
+  }
+  const optionChoseSuits = filterSuits(allCards, optionSuits);
+  renderFilteredCards(optionChoseSuits);
+}
+
+suits.addEventListener("change", (event) => {
+  selectSuits(event, data.cards);
+});
+
+const filterTitles = document.querySelectorAll('.filter-title');
+
+filterTitles.forEach(function(title) {
+  title.addEventListener('click', function() {
+    const filter = title.parentElement;
+    filter.classList.toggle('active');
+  });
+});
+
+const dataTarot = data.cards;
+const orderSelect = document.querySelector("#order-select");
+
+orderSelect.addEventListener("change", () => {
+  const ordemPersonagens = numericalOrder(orderSelect.value, dataTarot);
+  renderFilteredCards(ordemPersonagens);
+});
+
+
+
+

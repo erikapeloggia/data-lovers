@@ -1,21 +1,22 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Open sans";
 }
 
 body {
   background-image: url(../assets/bg.jpg);
-  background-color: #759ABC;
-  height: auto;
+  background-color: #759abc;
+  height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
-  font-family: "Open sans";
+  background-position: center center;
 }
 
-#logo {  /*imagem do divine oracle*/
+#logo {
+  /*imagem do divine oracle*/
   width: 13vw;
   padding: 8px 24px;
-
   justify-content: flex-start;
 }
 
@@ -80,8 +81,74 @@ nav {
 main {
   display: grid;
   grid-template-columns: 0.4fr 1fr;
+  grid-template-areas: "filters-and-order cards-container";
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+#filters-and-order {
+  /* background-color: #fff;
+  border: 1px solid #fff;
+  width:300px;
+  height: 300px;  */
+  margin-left: 25px;
+}
+
+#filters-and-order form label {
+  display: flex;
+  align-items: center;
+}
+
+#filters-and-order form label input[type="checkbox"] {
+  order: -1;
+  margin-right: 8px;
+}
+
+.filter {
+  margin-bottom: 10px;
+}
+
+.filter-title {
+  display: block;
+  font-weight: bold;
+}
+
+.filter-options {
+  display: none;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.filter.active .filter-options {
+  display: block;
+}
+
+#order-select {
+  display: inline-block;
+  width: 12vw;
+  height: 2.5vw;
+  border: none;
+  border-radius: 10px;
+  padding: 6px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+option {
+  font-weight: bold;
+}
+/* Ajuste para quando as opções estiverem abertas */
+.select:active,
+.select:focus {
+  position: relative;
+  z-index: 1;
+}
+
+/* Espaçamento entre selects */
+form {
+  margin-bottom: 20px;
 }
 
 .flip-container {
@@ -120,7 +187,7 @@ main {
   width: 100%;
   height: 23.3vw;
   margin-right: 21vw;
-  border: 5px solid #D9D2C4;
+  border: 5px solid #d9d2c4;
   border-radius: 10px;
   transform: rotateY(180deg);
   display: flex;
@@ -144,7 +211,7 @@ main {
   align-items: center;
 }
 
-.card-name{
+.card-name {
   display: flex;
   font-size: 25px;
   font-weight: bold;
@@ -154,7 +221,6 @@ main {
   white-space: pre-line;
   text-align: center;
 }
-
 
 .card-info {
   display: flex;
@@ -170,9 +236,9 @@ main {
 }
 
 .card-button {
-  background-color: #5885AC;
+  background-color: #5885ac;
   color: white;
-  border: 5px solid #5885AC;
+  border: 5px solid #5885ac;
   border-radius: 20px;
   font-size: 15px;
   font-weight: bold;
@@ -190,7 +256,7 @@ main {
 
 .close-modal {
   justify-self: end;
- background-color: transparent; 
+  background-color: transparent;
   color: #cfc9c9;
   border: none;
   height: 10px;
@@ -231,15 +297,15 @@ main {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0.2fr 0.2fr 1fr;
   grid-template-areas:
-    "close-modal close-modal close-modal" 
+    "close-modal close-modal close-modal"
     "modal-header-1 modal-header modal-header"
     "img-modal info-card info-card";
 }
 
 .info-card {
-  display:grid;
+  display: grid;
   width: 29vw;
-  height:20vw;
+  height: 20vw;
   overflow: auto;
   padding: 12px 10px 10px;
   justify-self: center;
@@ -261,7 +327,7 @@ main {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color:#fff;
+  background-color: #fff;
   border-radius: 10px;
 }
 
@@ -285,11 +351,12 @@ main {
   color: #fff;
 }
 
-.meaning-up, .meaning-rev, .desc {
+.meaning-up,
+.meaning-rev,
+.desc {
   margin-bottom: 0.5rem;
   font-size: 17.5px;
   text-align: justify;
- 
 }
 
 #fade,
@@ -306,7 +373,7 @@ main {
   border: 5px solid white;
   border-radius: 10px;
   justify-self: center;
-  align-self: center; 
+  align-self: center;
   grid-area: img-modal;
 }
 
@@ -330,7 +397,7 @@ main {
 
 footer {
   bottom: 0;
-  position: fixed;
+  /* position: fixed; */
   background-color: #3d5c78;
   font-size: 15px;
   text-align: center;
@@ -339,7 +406,8 @@ footer {
   width: 100%;
 }
 
-footer p { /* texto no footer */
+footer p {
+  /* texto no footer */
   padding-top: 10px;
 }
 
@@ -353,3 +421,4 @@ footer p { /* texto no footer */
 .bi-github {
   color: white;
 }
+
