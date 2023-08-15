@@ -229,8 +229,8 @@ const dataTarot = data.cards;
 const orderSelect = document.querySelector("#order-select");
 
 orderSelect.addEventListener("change", () => {
-  const ordemPersonagens = numericalOrder(orderSelect.value, dataTarot);
-  renderFilteredCards(ordemPersonagens);
+  const orderNumerical = numericalOrder(orderSelect.value, dataTarot);
+  renderFilteredCards(orderNumerical);
 });
 
 
