@@ -3,6 +3,7 @@ import {
   filterArcane,
   filterSuits,
   numericalOrder,
+  calculatePercentage
 } from "./data.js";
 import data from "./data/tarot/tarot.js";
 
@@ -80,6 +81,7 @@ function searchName(event) {
   const result = searchByName(data.cards, name);
   renderFilteredCards(result);
 }
+input.addEventListener("keyup", searchName);
 
 function renderFilteredCards(cards) {
   cardsContainer.innerHTML = "";
@@ -92,8 +94,6 @@ function renderFilteredCards(cards) {
 for (let i = 0; i < data.cards.length; i++) {
   renderCard(data.cards[i], i);
 }
-
-input.addEventListener("keyup", searchName);
 
 const fade = document.querySelector("#fade");
 const modal = document.querySelector("#modal");
@@ -175,8 +175,25 @@ function selectArcane(event, allCards) {
   renderFilteredCards(optionChose);
 }
 
+const percentageElement = document.getElementById("percentage");
 arcane.addEventListener("change", (event) => {
   selectArcane(event, data.cards);
+  const optionArcane = event.target.value;
+  const filteredList = filterArcane(dataTarot, optionArcane, "type");
+  const percentage = calculatePercentage(
+    dataTarot.length,
+    filteredList.length
+  );
+  if (optionArcane === "major"){
+    percentageElement.innerHTML =
+    "The major arcana represents " + percentage + "% of the deck";
+  } else if (optionArcane === "minor"){
+    percentageElement.innerHTML = 
+    "The minor arcana represents " + percentage + "% of the deck";
+  } else {
+    percentageElement.innerHTML = "";
+  }
+  
 });
 
 const checkboxesSuits = document.getElementsByName("suit");
@@ -214,6 +231,25 @@ function selectSuits(event, allCards) {
 
 suits.addEventListener("change", (event) => {
   selectSuits(event, data.cards);
+  const optionSuits = event.target.value;
+  const filteredList = filterSuits(dataTarot, optionSuits, "suit");
+  const percentage = calculatePercentage(
+    dataTarot.length,
+    filteredList.length
+  );
+  if (optionSuits === "wands"){
+    percentageElement.innerHTML =
+    "The suit of wands represents " + percentage + "% of the deck";
+  } else if (optionSuits === "cups"){
+    percentageElement.innerHTML = 
+    "The suit of cups represents " + percentage + "% of the deck";
+  } else if (optionSuits === "pentacles"){
+    percentageElement.innerHTML = 
+    "The suit of pentacles represents " + percentage + "% of the deck";
+  } else if (optionSuits === "swords"){
+    percentageElement.innerHTML = 
+    "The suit of swords represents " + percentage + "% of the deck";
+  }
 });
 
 const filterTitles = document.querySelectorAll('.filter-title');
@@ -232,7 +268,3 @@ orderSelect.addEventListener("change", () => {
   const orderNumerical = numericalOrder(orderSelect.value, dataTarot);
   renderFilteredCards(orderNumerical);
 });
-
-
-
-
