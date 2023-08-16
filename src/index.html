@@ -18,6 +18,7 @@
     />
   </head>
   <body>
+    <div class="all-content">
     <header>
       <a href="index.html">
         <img id="logo" src="../assets/title.png" alt="Divine Oracle" />
@@ -33,6 +34,7 @@
         </div>
       </div>
     </header>
+
     <main>
       <section id="filters-and-order">
         <div class="filter">
@@ -72,11 +74,18 @@
         <ul id="result"></ul>
       </section>
 
-      <section id="cards-container"></section>
+
+      <section>
+        <div id="grid-percentage">
+          <p id="percentage"></p>
+        </div> 
+        <div id="cards-container" class="hidden"></div> 
+        <div id="message-error" class="hidden">NO MATCH FOUND</div>       
+      </section>
       <div id="fade" class="hide"></div>
       <div id="modal" class="hide"></div>
     </main>
-
+    </div>
     <footer>
       <div class="footer-title">
         <p>© Desenvolvido por:<br>

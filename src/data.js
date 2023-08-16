@@ -27,11 +27,16 @@ function numericalOrder(value, cards) {
   return orderValue;
 }
 
+function calculatePercentage (allCards, filteredCards) {
+    return Math.round((filteredCards * 100) / allCards);
+}
+
 export{
   searchByName,
   filterArcane,
   filterSuits,
-  numericalOrder
+  numericalOrder,
+  calculatePercentage
 };
 
 

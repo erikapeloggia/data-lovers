@@ -1,34 +1,31 @@
-import { filterArcane, filterSuits, numericalOrder, searchByName} from '../src/data.js';
+import { searchByName, filterArcane, filterSuits, numericalOrder, calculatePercentage } from '../src/data.js';
 
 const tarot = [
   {
     "type": "major",
-    "name": "The Fool",
+    "name": "THE FOOL",
     "value": 0,
     "suit": "cups"
   },
   {
     "type": "major",
-    "name": "The Magician",
+    "name": "THE MAGICIAN",
     "value": 1,
     "suit": "pentacles"
   },
   {
     "type": "minor",
-    "name": "The High\n" + "Priestess",
+    "name": "THE HIGH PRIESTESS",
     "value": 2,
     "suit": "swords"      
   },
   {
-    "name": "Ace of Wands",
+    "name": "ACE OF WANDS",
     "value": 3,
     "suit": "wands",
     "type": "minor"
   }
 ]
-
-
-
 
 describe("searchByName", () => {
   it('is a function', () => {
@@ -39,9 +36,6 @@ describe("searchByName", () => {
     expect(searchByName(tarot, "The Fool").length).toBe(1);;
   });
 });
-
-
-
 
 describe('filterArcane', () => {
   it('is a function', () => {
@@ -56,9 +50,6 @@ describe('filterArcane', () => {
     expect(filterArcane(tarot, "minor")).toStrictEqual([tarot[2], tarot[3]]);
   });
 });
-
-
-
 
 describe('filterSuits', () => {
   it('is a function', () => {
@@ -82,9 +73,6 @@ describe('filterSuits', () => {
   });
 });
 
-
-
-
 describe('numericalOrder', () => {
   it('is a function', () => {
     expect(typeof numericalOrder).toBe('function');
@@ -96,5 +84,15 @@ describe('numericalOrder', () => {
 
   it('returns `ordering from major to minor`', () => {
     expect(numericalOrder("major-value", tarot)).toStrictEqual([tarot[3], tarot[2], tarot[1], tarot[0]]);
+  });
+});
+
+describe("calculatePercentage", () => {
+  it("is a function", () => {
+    expect(typeof calculatePercentage).toBe("function");
+  });
+
+  it("calculate percentage", () => {
+    expect(calculatePercentage(tarot.length, 3)).toEqual(75);
   });
 });
