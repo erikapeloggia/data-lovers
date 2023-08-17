@@ -77,11 +77,25 @@ function renderCard(card, index) {
 }
 
 function searchName(event) {
-  const name = event.target.value;
+  const name = event.target.value.replace(/\s+/g, " ").trim(); 
   const result = searchByName(data.cards, name);
-  renderFilteredCards(result);
+  const messageError = document.getElementById("message-error");
+  
+  if (result.length === 0) {
+    messageError.style.display = "block"; 
+    renderFilteredCards([]); 
+  } else {
+    messageError.style.display = "none"; 
+    renderFilteredCards(result); 
+  }
 }
+
 input.addEventListener("keyup", searchName);
+
+input.addEventListener("click", () => {
+  const percentageElement = document.getElementById("percentage");
+  percentageElement.innerHTML = ""; 
+});
 
 function renderFilteredCards(cards) {
   cardsContainer.innerHTML = "";
@@ -179,15 +193,16 @@ const percentageElement = document.getElementById("percentage");
 arcane.addEventListener("change", (event) => {
   selectArcane(event, data.cards);
   const optionArcane = event.target.value;
+  const optionIsChecked = event.target.checked;
   const filteredList = filterArcane(dataTarot, optionArcane, "type");
   const percentage = calculatePercentage(
     dataTarot.length,
     filteredList.length
   );
-  if (optionArcane === "major"){
+  if (optionArcane === "major" && optionIsChecked){
     percentageElement.innerHTML =
     "The major arcana represents " + percentage + "% of the deck";
-  } else if (optionArcane === "minor"){
+  } else if (optionArcane === "minor" && optionIsChecked){
     percentageElement.innerHTML = 
     "The minor arcana represents " + percentage + "% of the deck";
   } else {
@@ -232,23 +247,26 @@ function selectSuits(event, allCards) {
 suits.addEventListener("change", (event) => {
   selectSuits(event, data.cards);
   const optionSuits = event.target.value;
+  const optionIsChecked = event.target.checked;
   const filteredList = filterSuits(dataTarot, optionSuits, "suit");
   const percentage = calculatePercentage(
     dataTarot.length,
     filteredList.length
   );
-  if (optionSuits === "wands"){
+  if (optionSuits === "wands" && optionIsChecked){
     percentageElement.innerHTML =
     "The suit of wands represents " + percentage + "% of the deck";
-  } else if (optionSuits === "cups"){
+  } else if (optionSuits === "cups" && optionIsChecked){
     percentageElement.innerHTML = 
     "The suit of cups represents " + percentage + "% of the deck";
-  } else if (optionSuits === "pentacles"){
+  } else if (optionSuits === "pentacles" && optionIsChecked){
     percentageElement.innerHTML = 
     "The suit of pentacles represents " + percentage + "% of the deck";
-  } else if (optionSuits === "swords"){
+  } else if (optionSuits === "swords" && optionIsChecked){
     percentageElement.innerHTML = 
     "The suit of swords represents " + percentage + "% of the deck";
+  } else {
+    percentageElement.innerHTML = "";
   }
 });
 
