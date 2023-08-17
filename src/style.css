@@ -32,7 +32,7 @@ header {
   flex-direction: row;
   background-color: #3d5c78;
   height: 6.3vw;
-  justify-content: space-between;
+  justify-content: space-between; 
 }
 
 nav {
@@ -423,6 +423,45 @@ form {
   top: 0;
 }
 
+.main-about{
+  padding: 25px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#figure-about{
+  width: 24vw;
+  margin-right: 6vw;
+  margin-top: 15px;
+ 
+}
+
+#section-about{
+  border-radius: 10px;
+  background-color: rgba(61, 92, 120, 0.8);
+  padding: 35px;
+  width: 36vw;
+  height: 28vw;
+}
+
+#section-about, p{
+  font-size: 20px;
+  /* white-space: pre-line; */
+  text-align: justify;
+  margin-top: 16px;
+  font-family: "Open sans";
+  color: white;
+  /* font-weight: 500; */
+}  
+
+#section-aboute, h2{
+  font-size: 30px;
+  text-align: center;
+  font-family: "Open sans"; 
+  color: white;
+}
+
+
 footer {
   /* bottom: 0; */
   /* position: fixed; */
@@ -439,6 +478,7 @@ footer {
 footer p {
   /* texto no footer */
   padding-top: 10px;
+  text-align: center;
 }
 
 .icon-github {
