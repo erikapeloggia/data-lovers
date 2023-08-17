@@ -32,7 +32,7 @@ header {
   flex-direction: row;
   background-color: #3d5c78;
   height: 6.3vw;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 
 nav {
@@ -44,7 +44,7 @@ nav {
 
 .navigation {
   /*navigation com home e about*/
-  font-size: 17px;
+  font-size: 20px;
   font-weight: bold;
   text-decoration: none;
   color: white;
@@ -85,20 +85,33 @@ nav {
   padding: 0px 0px 80px 0px;
 }
 
-#grid-percentage{
+#message-error {
+  display: none;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  justify-self: center;
+  text-indent: 0;
+}
+
+#grid-message-error {
   display: grid;
   grid-template-columns: 766px;
 }
 
-#percentage{
+#grid-percentage {
+  display: grid;
+  grid-template-columns: 766px;
+}
+
+#percentage {
   display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: bold;
   color: white;
   margin-bottom: 30px;
+  text-indent: 0;
 }
 
 main {
@@ -111,16 +124,19 @@ main {
 }
 
 #filters-and-order {
-  /* background-color: #fff;
-  border: 1px solid #fff;
-  width:300px;
-  height: 300px;  */
+  /* background-color: rgba(255, 255, 255, 0.6); */
+  background-color: rgba(61, 92, 120, 0.8);
+  border-radius: 10px;
+  width: 210px;
+  height: 380px;
+  padding: 10px;
   margin-left: 25px;
+  position: sticky;
 }
 
-#filters-and-order form label {
+#filters-and-order form label {  /* alinha as opções dos filtros na vertical */
   display: flex;
-  align-items: center;
+  font-size: 18px;
 }
 
 #filters-and-order form label input[type="checkbox"] {
@@ -135,6 +151,9 @@ main {
 .filter-title {
   display: block;
   font-weight: bold;
+  color: white;
+  padding-left: 5px;
+  font-size: 20px;
 }
 
 .filter-options {
@@ -153,15 +172,20 @@ main {
   height: 2.5vw;
   border: none;
   border-radius: 10px;
-  padding: 6px;
   margin-bottom: 20px;
   box-sizing: border-box;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 20px;
+  color: white;
+  background-color: transparent;
+  outline: none;
 }
 
 option {
   font-weight: bold;
+  color: white;
+  background-color: rgba(61, 92, 120, 0.9);
+  font-size: 18px;
 }
 /* Ajuste para quando as opções estiverem abertas */
 .select:active,
@@ -219,7 +243,7 @@ form {
   justify-content: center;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
@@ -237,6 +261,7 @@ form {
   border-radius: 10px;
   place-items: center;
   align-items: center;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
 .card-name {
@@ -423,44 +448,66 @@ form {
   top: 0;
 }
 
-.main-about{
-  padding: 25px; 
+#logo-about {
+  /*imagem do divine oracle*/
+  width: 13vw;
+  padding: 8px 24px;
+  grid-area: logo;
+}
+
+.header-about {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-areas: "logo navigation-about navigation-about-1";
+}
+
+.navigation-about {
+  /*navigation com home e about*/
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  padding: 20px;
+  grid-area: navigation-about;
+}
+.main-about {
+  padding: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#figure-about{
-  width: 24vw;
-  margin-right: 6vw;
+#figure-about {
+  width: 34vw;
+  margin-right: 4vw;
   margin-top: 15px;
- 
 }
 
-#section-about{
+#section-about {
   border-radius: 10px;
   background-color: rgba(61, 92, 120, 0.8);
   padding: 35px;
   width: 36vw;
-  height: 28vw;
+  height: 29vw;
 }
 
-#section-about, p{
+#section-about,
+p {
   font-size: 20px;
-  /* white-space: pre-line; */
   text-align: justify;
-  margin-top: 16px;
+  margin-top: 8px;
   font-family: "Open sans";
   color: white;
-  /* font-weight: 500; */
-}  
-
-#section-aboute, h2{
-  font-size: 30px;
-  text-align: center;
-  font-family: "Open sans"; 
-  color: white;
+  text-indent: 8%;
 }
 
+#section-aboute,
+h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  font-family: "Open sans";
+  color: white;
+}
 
 footer {
   /* bottom: 0; */
@@ -472,7 +519,6 @@ footer {
   height: 6.5vw;
   width: 100%;
   padding: 10px 0;
-
 }
 
 footer p {
@@ -491,4 +537,3 @@ footer p {
 .bi-github {
   color: white;
 }
-

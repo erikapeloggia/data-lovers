@@ -3,24 +3,24 @@ import { searchByName, filterArcane, filterSuits, numericalOrder, calculatePerce
 const tarot = [
   {
     "type": "major",
-    "name": "THE FOOL",
+    "name": "The Fool",
     "value": 0,
     "suit": "cups"
   },
   {
     "type": "major",
-    "name": "THE MAGICIAN",
+    "name": "The Magician",
     "value": 1,
     "suit": "pentacles"
   },
   {
     "type": "minor",
-    "name": "THE HIGH PRIESTESS",
+    "name": "The High Priestess",
     "value": 2,
     "suit": "swords"      
   },
   {
-    "name": "ACE OF WANDS",
+    "name": "Ace of Wands",
     "value": 3,
     "suit": "wands",
     "type": "minor"
@@ -33,7 +33,11 @@ describe("searchByName", () => {
   });
 
   it('returns `search for a name`', () => {
-    expect(searchByName(tarot, "The Fool").length).toBe(1);;
+    expect(searchByName(tarot, "The Fool").length).toBe(1);
+  });
+
+  it('returns `search for a name`', () => {
+    expect(searchByName(tarot, "THE FOOL").length).toBe(1);
   });
 });
 
