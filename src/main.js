@@ -286,3 +286,27 @@ orderSelect.addEventListener("change", () => {
   const orderNumerical = numericalOrder(orderSelect.value, dataTarot);
   renderFilteredCards(orderNumerical);
 });
+
+const mobileMenuButton = document.getElementById("mobileMenuButton");
+const mobileMenu = document.querySelector('.mobile-menu');
+
+function menuShow() {
+  mobileMenu.classList.toggle('open');
+}
+
+mobileMenuButton.addEventListener("click", menuShow);
+
+
+
+// function menuShow() {
+//   let menuMobile = document.querySelector('.mobile-menu');
+//   if (menuMobile.classList.contains('open')){
+//     menuMobile.classList.remove('open');
+//   }else {
+//     menuMobile.classList.add('open');
+    
+//   }
+
+// }
+
+// menuMobile.addEventListener("click", menuShow);

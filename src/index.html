@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"/>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -20,22 +17,41 @@
   <body>
     <div class="all-content">
     <header>
+      <div class="mobile-menu-icon">
+        <button id="mobileMenuButton">
+          <img src="./assets/mobile-icon.svg" alt="mobile-icon">
+        </button>
+      </div>
       <a href="index.html">
         <img id="logo" src="../assets/title.png" alt="Divine Oracle" />
       </a>
-      <nav>
+      <nav class="nav-bar">
         <a class="navigation" href="index.html">Home</a>
         <a class="navigation" href="about.html">About</a>
+        
       </nav>
       <div id="container-search">
         <div class="search-input">
-          <i class="fa-solid fa-magnifying-glass"></i
-          ><input id="search" type="text" placeholder="Find your tarot card" />
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="search" type="text" placeholder="Find your tarot card" />
         </div>
       </div>
+      
     </header>
 
     <main>
+      <div class="mobile-menu">
+        <a class="navigation-mobile" href="index.html">Home</a>
+        <a class="navigation-mobile" href="about.html">About</a>
+      </div>
+
+      <div id="container-search-mobile">
+        <div class="search-input">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="search" type="text" placeholder="Find your tarot card" />
+        </div>
+      </div>
+
       <section id="filters-and-order">
         <div class="filter">
           <h3 class="filter-title">Suits</h3>
