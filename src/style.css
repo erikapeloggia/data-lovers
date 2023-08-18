@@ -537,3 +537,85 @@ footer p {
 .bi-github {
   color: white;
 }
+
+.mobile-menu {
+  display:none;
+  
+}
+.mobile-menu-icon{
+  display: none;
+}
+.navigation-mobile{
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+#container-search-mobile{
+  display: none;
+}
+
+/* Para dispositivos pequenos, como smartphones */
+@media screen and (max-width: 767px) {
+
+#container-search-mobile{
+  display: block;
+}
+  header{
+    height: 60px;
+  }
+    #logo{
+      width: 30vw;
+      padding: 0;
+      margin-top: 1vw;   
+      margin-left: 10vw; 
+    }
+  
+    
+  .mobile-menu {
+    position: fixed;
+    z-index: 1;
+    text-align: center;
+    background-color: pink;
+  }
+  
+  .navigation {
+    display: none;
+  }
+  
+  .search-input {
+    display: none;
+  }
+  
+  .mobile-menu-icon {
+    display: flex;
+    justify-content: center;
+
+  }
+  
+  .mobile-menu-icon button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .open {
+    display: block;
+  }
+  
+
+ 
+}
+
+/* Para tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Estilos aqui */
+}
+
+/* Para desktops e dispositivos maiores */
+@media (min-width: 1024px) {
+  /* Estilos aqui */
+}
