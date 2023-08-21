@@ -33,23 +33,61 @@
       <div id="container-search">
         <div class="search-input">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input id="search" type="text" placeholder="Find your tarot card" />
+          <input class="search" id="search" type="text" placeholder="Find your tarot card" />
         </div>
       </div>
-      
     </header>
-
+    
     <main>
-      <div class="mobile-menu">
-        <a class="navigation-mobile" href="index.html">Home</a>
-        <a class="navigation-mobile" href="about.html">About</a>
-      </div>
-
+    
       <div id="container-search-mobile">
         <div class="search-input">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input id="search" type="text" placeholder="Find your tarot card" />
+          <input class="search" id="search-mobile" type="text" placeholder="Find your tarot card" />
         </div>
+      </div>
+    
+      <div class="mobile-menu">
+        <a class="navigation-mobile" href="index.html">Home</a>
+        <a class="navigation-mobile" href="about.html">About</a>
+
+        <div class="filter-mobile">
+          <div class="filter">
+            <h3 class="filter-title">Suits</h3>
+            <form id="suits" class="filter-options">
+              <label><input type="checkbox" name="suit" value="wands" />Wands</label>
+              <label><input type="checkbox" name="suit" value="cups" />Cups</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="suit"
+                  value="pentacles"
+                />Pentacles</label
+              >
+              <label
+                ><input type="checkbox" name="suit" value="swords" />Swords</label
+              >
+            </form>
+          </div>
+          
+          <div class="filter">
+          <h3 class="filter-title">Arcane</h3>
+          <form id="arcane" class="filter-options-arcane">
+            <label><input type="checkbox" name="type" value="major" />Major</label>
+            <label><input type="checkbox" name="type" value="minor" />Minor</label>
+          </form>
+        </div>
+  
+          <form id="order">
+            <select class="order-select">
+              <option value="">Numerical Order</option>
+              <option value="major-value">Major - Minor (78 - 0)</option>
+              <option value="minor-value">Minor - Major (0 - 78)</option>
+            </select>
+          </form>
+          </div>
+  
       </div>
 
       <section id="filters-and-order">
@@ -59,29 +97,22 @@
             <label><input type="checkbox" name="suit" value="wands" />Wands</label>
             <label><input type="checkbox" name="suit" value="cups" />Cups</label
             >
-            <label
-              ><input
-                type="checkbox"
-                name="suit"
-                value="pentacles"
-              />Pentacles</label
-            >
-            <label
-              ><input type="checkbox" name="suit" value="swords" />Swords</label
+            <label><input type="checkbox" name="suit" value="pentacles" />Pentacles</label>
+            <label><input type="checkbox" name="suit" value="swords" />Swords</label
             >
           </form>
         </div>
         
         <div class="filter">
         <h3 class="filter-title">Arcane</h3>
-        <form id="arcane" class="filter-options">
+        <form id="arcane" class="filter-options-arcane">
           <label><input type="checkbox" name="type" value="major" />Major</label>
           <label><input type="checkbox" name="type" value="minor" />Minor</label>
         </form>
       </div>
 
         <form id="order">
-          <select id="order-select">
+          <select class="order-select">
             <option value="">Numerical Order</option>
             <option value="major-value">Major - Minor (78 - 0)</option>
             <option value="minor-value">Minor - Major (0 - 78)</option>
@@ -90,14 +121,14 @@
         <!-- <ul id="result"></ul> -->
       </section>
 
-      <section>
+      <section class="cartinhas">
         <div id="grid-percentage">
           <p id="percentage"></p>
         </div> 
         <div id="cards-container"></div> 
         <div id="grid-message-error">
-        <p id="message-error">No Match Found</p>  
-      </div>     
+          <p id="message-error">No Match Found</p>  
+        </div>     
       </section>
       <div id="fade" class="hide"></div>
       <div id="modal" class="hide"></div>

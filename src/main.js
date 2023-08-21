@@ -3,21 +3,34 @@ import {
   filterArcane,
   filterSuits,
   numericalOrder,
-  calculatePercentage
+  calculatePercentage,
 } from "./data.js";
 import data from "./data/tarot/tarot.js";
 
 const cardsContainer = document.querySelector("#cards-container");
-
 const input = document.getElementById("search");
-input.addEventListener("focus", () => {
-  input.placeholder = "";
-});
-input.addEventListener("blur", () => {
-  if (!input.value) {
-    input.placeholder = "Find your tarot card";
-  }
-});
+const inputMobile = document.getElementById("search-mobile");
+
+function handleInputSearch(input) {
+  input.addEventListener("focus", () => {
+    input.placeholder = "";
+  });
+  input.addEventListener("blur", () => {
+    if (!input.value) {
+      input.placeholder = "Find your tarot card";
+    }
+  });
+
+  input.addEventListener("keyup", searchName);
+
+  input.addEventListener("click", () => {
+    const percentageElement = document.getElementById("percentage");
+    percentageElement.innerHTML = "";
+  });
+}
+
+handleInputSearch(input);
+handleInputSearch(inputMobile);
 
 function createImgElement(card, flipContainer) {
   const imgElement = document.createElement("img");
@@ -77,25 +90,18 @@ function renderCard(card, index) {
 }
 
 function searchName(event) {
-  const name = event.target.value.replace(/\s+/g, " ").trim(); 
+  const name = event.target.value.replace(/\s+/g, " ").trim();
   const result = searchByName(data.cards, name);
   const messageError = document.getElementById("message-error");
-  
+
   if (result.length === 0) {
-    messageError.style.display = "block"; 
-    renderFilteredCards([]); 
+    messageError.style.display = "block";
+    renderFilteredCards([]);
   } else {
-    messageError.style.display = "none"; 
-    renderFilteredCards(result); 
+    messageError.style.display = "none";
+    renderFilteredCards(result);
   }
 }
-
-input.addEventListener("keyup", searchName);
-
-input.addEventListener("click", () => {
-  const percentageElement = document.getElementById("percentage");
-  percentageElement.innerHTML = ""; 
-});
 
 function renderFilteredCards(cards) {
   cardsContainer.innerHTML = "";
@@ -163,11 +169,11 @@ function openModal(cardIndex) {
 
 fade.addEventListener("click", toggleModal);
 
-const checkboxes = document.getElementsByName("type");
+const checkboxesArcane = document.getElementsByName("type");
 
-checkboxes.forEach((checkbox) => {
+checkboxesArcane.forEach((checkbox) => {
   checkbox.addEventListener("click", function () {
-    checkboxes.forEach((cb) => {
+    checkboxesArcane.forEach((cb) => {
       if (cb !== checkbox) {
         cb.checked = false;
       }
@@ -175,7 +181,7 @@ checkboxes.forEach((checkbox) => {
   });
 });
 
-const arcane = document.getElementById("arcane");
+const arcane = document.querySelectorAll(".filter-options-arcane");
 
 function selectArcane(event, allCards) {
   const optionArcane = event.target.value;
@@ -190,25 +196,28 @@ function selectArcane(event, allCards) {
 }
 
 const percentageElement = document.getElementById("percentage");
-arcane.addEventListener("change", (event) => {
-  selectArcane(event, data.cards);
-  const optionArcane = event.target.value;
-  const optionIsChecked = event.target.checked;
-  const filteredList = filterArcane(dataTarot, optionArcane, "type");
-  const percentage = calculatePercentage(
-    dataTarot.length,
-    filteredList.length
-  );
-  if (optionArcane === "major" && optionIsChecked){
-    percentageElement.innerHTML =
-    "The major arcana represents " + percentage + "% of the deck";
-  } else if (optionArcane === "minor" && optionIsChecked){
-    percentageElement.innerHTML = 
-    "The minor arcana represents " + percentage + "% of the deck";
-  } else {
-    percentageElement.innerHTML = "";
-  }
-  
+
+arcane.forEach((arcana) => {
+  arcana.addEventListener("change", (event) => {
+    const checkboxesArcane = arcana.getElementsByTagName("input");
+    selectArcane(event, data.cards, checkboxesArcane);
+    const optionArcane = event.target.value;
+    const optionIsChecked = event.target.checked;
+    const filteredList = filterArcane(dataTarot, optionArcane, "type");
+    const percentage = calculatePercentage(
+      dataTarot.length,
+      filteredList.length
+    );
+    if (optionArcane === "major" && optionIsChecked) {
+      percentageElement.innerHTML =
+        "The major arcana represents " + percentage + "% of the deck";
+    } else if (optionArcane === "minor" && optionIsChecked) {
+      percentageElement.innerHTML =
+        "The minor arcana represents " + percentage + "% of the deck";
+    } else {
+      percentageElement.innerHTML = "";
+    }
+  });
 });
 
 const checkboxesSuits = document.getElementsByName("suit");
@@ -223,9 +232,9 @@ checkboxesSuits.forEach((checkbox) => {
   });
 });
 
-const suits = document.getElementById("suits");
+const suits = document.querySelectorAll(".filter-options");
 
-function selectSuits(event, allCards) {
+function selectSuits(event, allCards, checkboxesSuits) {
   const optionSuits = event.target.value;
   if (
     !checkboxesSuits[0].checked &&
@@ -244,69 +253,59 @@ function selectSuits(event, allCards) {
   renderFilteredCards(optionChoseSuits);
 }
 
-suits.addEventListener("change", (event) => {
-  selectSuits(event, data.cards);
-  const optionSuits = event.target.value;
-  const optionIsChecked = event.target.checked;
-  const filteredList = filterSuits(dataTarot, optionSuits, "suit");
-  const percentage = calculatePercentage(
-    dataTarot.length,
-    filteredList.length
-  );
-  if (optionSuits === "wands" && optionIsChecked){
-    percentageElement.innerHTML =
-    "The suit of wands represents " + percentage + "% of the deck";
-  } else if (optionSuits === "cups" && optionIsChecked){
-    percentageElement.innerHTML = 
-    "The suit of cups represents " + percentage + "% of the deck";
-  } else if (optionSuits === "pentacles" && optionIsChecked){
-    percentageElement.innerHTML = 
-    "The suit of pentacles represents " + percentage + "% of the deck";
-  } else if (optionSuits === "swords" && optionIsChecked){
-    percentageElement.innerHTML = 
-    "The suit of swords represents " + percentage + "% of the deck";
-  } else {
-    percentageElement.innerHTML = "";
-  }
+suits.forEach((suit) => {
+  suit.addEventListener("change", (event) => {
+    const checkboxesSuits = suit.getElementsByTagName("input");
+    selectSuits(event, data.cards, checkboxesSuits);
+    const optionSuits = event.target.value;
+    const optionIsChecked = event.target.checked;
+    const filteredList = filterSuits(dataTarot, optionSuits, "suit");
+    const percentage = calculatePercentage(
+      dataTarot.length,
+      filteredList.length
+    );
+    if (optionSuits === "wands" && optionIsChecked) {
+      percentageElement.innerHTML =
+        "The suit of wands represents " + percentage + "% of the deck";
+    } else if (optionSuits === "cups" && optionIsChecked) {
+      percentageElement.innerHTML =
+        "The suit of cups represents " + percentage + "% of the deck";
+    } else if (optionSuits === "pentacles" && optionIsChecked) {
+      percentageElement.innerHTML =
+        "The suit of pentacles represents " + percentage + "% of the deck";
+    } else if (optionSuits === "swords" && optionIsChecked) {
+      percentageElement.innerHTML =
+        "The suit of swords represents " + percentage + "% of the deck";
+    } else {
+      percentageElement.innerHTML = "";
+    }
+  });
 });
 
-const filterTitles = document.querySelectorAll('.filter-title');
+const filterTitles = document.querySelectorAll(".filter-title");
 
-filterTitles.forEach(function(title) {
-  title.addEventListener('click', function() {
+filterTitles.forEach(function (title) {
+  title.addEventListener("click", function () {
     const filter = title.parentElement;
-    filter.classList.toggle('active');
+    filter.classList.toggle("active");
   });
 });
 
 const dataTarot = data.cards;
-const orderSelect = document.querySelector("#order-select");
+const orderSelect = document.querySelectorAll(".order-select");
 
-orderSelect.addEventListener("change", () => {
-  const orderNumerical = numericalOrder(orderSelect.value, dataTarot);
-  renderFilteredCards(orderNumerical);
+orderSelect.forEach((order) => {
+  order.addEventListener("change", () => {
+    const orderNumerical = numericalOrder(order.value, dataTarot);
+    renderFilteredCards(orderNumerical);
+  });
 });
 
 const mobileMenuButton = document.getElementById("mobileMenuButton");
-const mobileMenu = document.querySelector('.mobile-menu');
+const mobileMenu = document.querySelector(".mobile-menu");
 
 function menuShow() {
-  mobileMenu.classList.toggle('open');
+  mobileMenu.classList.toggle("open");
 }
 
 mobileMenuButton.addEventListener("click", menuShow);
-
-
-
-// function menuShow() {
-//   let menuMobile = document.querySelector('.mobile-menu');
-//   if (menuMobile.classList.contains('open')){
-//     menuMobile.classList.remove('open');
-//   }else {
-//     menuMobile.classList.add('open');
-    
-//   }
-
-// }
-
-// menuMobile.addEventListener("click", menuShow);
