@@ -57,7 +57,7 @@ nav {
   padding-top: 10px;
 }
 
-#search {
+.search {
   /*input de pesquisa*/
   background-color: transparent;
   border: none;
@@ -80,7 +80,7 @@ nav {
   color: white;
 }
 
-#search::placeholder {
+.search::placeholder {
   color: white;
   padding: 0px 0px 80px 0px;
 }
@@ -131,10 +131,10 @@ main {
   height: 380px;
   padding: 10px;
   margin-left: 25px;
-  position: sticky;
 }
 
-#filters-and-order form label {  /* alinha as opções dos filtros na vertical */
+#filters-and-order form label {
+  /* alinha as opções dos filtros na vertical */
   display: flex;
   font-size: 18px;
 }
@@ -156,17 +156,18 @@ main {
   font-size: 20px;
 }
 
-.filter-options {
-  display: none;
+.filter-options, .filter-options-arcane {
   padding: 10px;
   margin-top: 5px;
+  display: none;
+  flex-direction: column;
 }
 
-.filter.active .filter-options {
-  display: block;
+.filter.active .filter-options, .filter.active .filter-options-arcane {
+  display: flex;
 }
 
-#order-select {
+.order-select {
   display: inline-block;
   width: 12vw;
   height: 2.5vw;
@@ -286,6 +287,7 @@ form {
   margin: 0%;
   white-space: pre-line;
   text-align: center;
+  text-indent: 0;
 }
 
 .card-button {
@@ -410,6 +412,7 @@ form {
   margin-bottom: 0.5rem;
   font-size: 17.5px;
   text-align: justify;
+  text-indent: 0;
 }
 
 #fade,
@@ -539,75 +542,184 @@ footer p {
 }
 
 .mobile-menu {
-  display:none;
-  
-}
-.mobile-menu-icon{
   display: none;
 }
-.navigation-mobile{
-  font-size: 15px;
+.mobile-menu-icon {
+  display: none;
+}
+
+.navigation-mobile {
+  font-size: 20px;
   font-weight: bold;
   text-decoration: none;
   color: white;
   display: flex;
   flex-direction: column;
+  padding: 10px;
 }
 
-#container-search-mobile{
+#container-search-mobile {
+  display: none;
+}
+
+#order-mobile {
+  display: none;
+}
+
+.filter-mobile {
   display: none;
 }
 
 /* Para dispositivos pequenos, como smartphones */
 @media screen and (max-width: 767px) {
+  .filter-mobile {
+    display: block;
+  }
 
-#container-search-mobile{
-  display: block;
-}
-  header{
+  #order-mobile {
+    display: block;
+  }
+
+  #container-search-mobile {
+    display: block;
+  }
+
+  #order-select {
+    width: 64vw;
+    height: 7.5vw;
+  }
+
+  header {
     height: 60px;
   }
-    #logo{
-      width: 30vw;
-      padding: 0;
-      margin-top: 1vw;   
-      margin-left: 10vw; 
-    }
-  
-    
+  #logo {
+    width: 30vw;
+    padding: 0;
+    margin-top: 1vw;
+    margin-left: 10vw;
+  }
+
   .mobile-menu {
     position: fixed;
     z-index: 1;
-    text-align: center;
-    background-color: pink;
+    background-color: rgba(88, 133, 172, 0.9);
+    width: 70%;
+    height: 100%;
+    margin: 0;
   }
-  
+
   .navigation {
     display: none;
   }
-  
-  .search-input {
+
+  #container-search {
     display: none;
   }
-  
+
   .mobile-menu-icon {
     display: flex;
     justify-content: center;
-
   }
-  
+
   .mobile-menu-icon button {
     background-color: transparent;
     border: none;
     cursor: pointer;
   }
-  
+
   .open {
     display: block;
   }
-  
 
- 
+  #filters-and-order {
+    display: none;
+  }
+
+  #cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 40%);
+    grid-gap: 38px;
+    margin: 0;
+  }
+
+  #cards-container img {
+    width: 125px;
+    height: 210px;
+    margin: 0;
+  }
+
+  .flip-container {
+    width: 125px;
+    height: 210px;
+    margin: 0;
+  }
+
+  .cards-back {
+    width: 125px;
+    height: 203px;
+    margin: 0;
+  }
+
+  .card-info,
+  .card-name {
+    font-size: 15px;
+  }
+
+  .card-button {
+    font-size: 9px;
+    width: 20vw;
+    height: 6vw;
+    margin-top: 8%;
+    /* margin-left: 24%; */
+  }
+
+  #modal {
+    width: 78vw;
+    height: 160vw;
+    padding: 1.2rem 2rem 1.3rem 1.3rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 0.2fr 0.1fr 1fr;
+    grid-template-areas:
+      "close-modal close-modal close-modal"
+      "img-modal img-modal img-modal"
+      "modal-header modal-header modal-header"
+      "info-card info-card info-card";
+  }
+  .img-modal {
+    width: 43%;
+    height: 85%;
+    margin: 25px 0px 20px;
+  }
+
+  .info-card {
+    width: 75vw;
+    height: 68vw;
+    margin-top: 10px;
+  }
+
+  .cartinhas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  #grid-percentage {
+    display: grid;
+    /* grid-template-columns: 766px; */
+  }
+
+  .icon-github {
+    display: none;
+  }
 }
 
 /* Para tablets */
