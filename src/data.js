@@ -28,7 +28,7 @@ function numericalOrder(value, cards) {
 }
 
 function calculatePercentage (allCards, filteredCards) {
-    return Math.round((filteredCards * 100) / allCards);
+  return Math.round((filteredCards * 100) / allCards);
 }
 
 export{
