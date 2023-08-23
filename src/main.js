@@ -202,6 +202,7 @@ arcane.forEach((arcana) => {
     const checkboxesArcane = arcana.getElementsByTagName("input");
     selectArcane(event, data.cards, checkboxesArcane);
     const optionArcane = event.target.value;
+
     const optionIsChecked = event.target.checked;
     const filteredList = filterArcane(dataTarot, optionArcane, "type");
     const percentage = calculatePercentage(
@@ -214,8 +215,10 @@ arcane.forEach((arcana) => {
     } else if (optionArcane === "minor" && optionIsChecked) {
       percentageElement.innerHTML =
         "The minor arcana represents " + percentage + "% of the deck";
-    } else {
+    } else if (!event.target.checked) {
+      renderFilteredCards(data.cards);
       percentageElement.innerHTML = "";
+      return;
     }
   });
 });
@@ -245,6 +248,7 @@ function selectSuits(event, allCards, checkboxesSuits) {
     renderFilteredCards(allCards);
     return;
   }
+
   if (optionSuits === "") {
     renderFilteredCards(allCards);
     return;
