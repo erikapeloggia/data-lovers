@@ -758,7 +758,7 @@ footer p {
     margin-top: 10px;
   }
 
-  .cartinhas {
+  .deck {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -875,21 +875,21 @@ footer p {
   
   .order-select {
     width: 230px;
-    height: 28px;
+    height: 33px;
     padding-left: 5px;
     font-size: 23px;
   }
   
   .icon-expanded-suits {
-    font-size: 15px;
+    font-size: 10px;
     font-weight: bold;
-    margin-left: 130px;
+    margin-left: 152px;
   }
       
   .icon-expanded-arcane {
-    font-size: 15px;
+    font-size: 10px;
     font-weight: bold;
-    margin-left:  100px;
+    margin-left:  129px;
   }
 
   header {
@@ -1030,7 +1030,7 @@ footer p {
     margin-top: 10px;
   }
   
-  .cartinhas {
+  .deck {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1099,6 +1099,18 @@ footer p {
 }
 
 /* Para desktops e dispositivos maiores */
-@media (min-width: 1024px) {
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .card-button {
+    width: 10vw;
+    height: 2.8vw;
+    margin-left: 40px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .card-button {
+    width: 8vw;
+    height: 2vw;
+  }
 }
   
