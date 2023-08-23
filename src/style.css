@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: url(../assets/bg.jpg);
+  background-image: url(../assets/bg-1.png);
   background-color: #759abc;
   height: 100vh;
   background-size: cover;
@@ -297,6 +297,8 @@ form {
   align-items: center;
   white-space: pre-line;
   text-align: center;
+  text-indent: 0;
+
 }
 
 .card-info {
@@ -474,27 +476,17 @@ form {
   top: 0;
 }
 
-#logo-about {
-  /*imagem do divine oracle*/
-  width: 13vw;
-  padding: 8px 24px;
-  grid-area: logo;
-}
-
-.header-about {
-  display: grid;
-  grid-template-columns: 0.5fr 1fr 0.5fr;
-  grid-template-areas: "logo navigation-about navigation-about-1";
+.body-about {
+  background-image: url(../assets/bg.jpg);
 }
 
 .navigation-about {
   /*navigation com home e about*/
-  font-size: 20px;
+  font-size: 23px;
   font-weight: bold;
   text-decoration: none;
   color: white;
-  padding: 20px;
-  grid-area: navigation-about;
+  padding: 28px 32px;
 }
 
 .main-about {
@@ -504,7 +496,7 @@ form {
   align-items: center;
 }
 #figure-about {
-  width: 34vw;
+  width: 40vw;
   margin-right: 4vw;
   margin-top: 15px;
 }
@@ -539,7 +531,6 @@ h2 {
 footer {
   background-color: #3d5c78;
   font-size: 15px;
-  text-align: center;
   color: white;
   height: 6vw;
   width: 100%;
@@ -548,6 +539,7 @@ footer {
 
 footer p {
   text-align: center;
+  text-indent: 0;
 }
 
 .fa-brands, .fa-github {
@@ -582,28 +574,26 @@ footer p {
 }
 
 /* Para dispositivos pequenos, como smartphones */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 766px) {
+  
+.footer-title{
+  display: none;
+}
 
-  .footer-title{
-    display: none;
-  }
+.footer-mobile{
+  display: block;
+}
 
-  .footer-mobile{
-    display: block;
-  }
+footer {
+  text-align: center;
+  height: 25vw;
+  width: 100%;
+  padding-top: 5px;
+}
 
-  footer {
-    text-align: center;
-    height: 25vw;
-    width: 100%;
-    margin-top: 10vw;
-    padding-top: 5px;
-  }
-
-  footer p {
-    font-size: 16px;
-  }
-
+footer p {
+  font-size: 16px;
+}
   .filter-mobile {
     display: block;
   }
@@ -631,7 +621,7 @@ footer p {
     }
 
   .order-select {
-    width: 197.5px;
+    width: 198px;
     height: 28px;
     padding-left: 5px;
   }
@@ -710,6 +700,7 @@ footer p {
     grid-template-columns: repeat(2, 40%);
     grid-gap: 38px;
     margin: 0;
+    margin-bottom: 10vw;
   }
 
   #cards-container img {
@@ -740,7 +731,6 @@ footer p {
     width: 20vw;
     height: 6vw;
     margin-top: 8%;
-    /* margin-left: 24%; */
   }
 
   #modal {
@@ -798,16 +788,13 @@ footer p {
     display: none;
   }
 
- .main-about{
-  justify-content: ;
- }
-
- #logo-about{
-  width: 30vw;
+ .navigation-about {
+  font-size: 18px;
+  padding: 15px;
  }
 
  #figure-about {
-  width: 54vw;
+  width: 70vw;
   margin-right: 4vw;
   margin-top: 0px;
 }
@@ -815,31 +802,300 @@ footer p {
 #section-about {
   padding: 20px;
   width: 78vw;
-  height: 80vw;
+  height: 120vw;
   overflow: auto;
 }
 
 #section-about,
 p {
-  font-size: 20px;
+  font-size: 16.5px;
   margin-top: 8px;
   text-indent: 8%;
 }
 
 #section-aboute,
 h2 {
-  display: flex;
-  justify-content: center;
-  font-size: 30px;
-  font-family: "Open sans";
-  color: white;
+  font-size: 18px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ffffff70;
+  border-radius: 10px;
 }
 
 }
 
 /* Para tablets */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 767px) and (max-width: 1023px) {
   /* Estilos aqui */
+
+  .footer-title{
+    display: block;
+  }
+  
+  footer {
+    text-align: center;
+    height: 13vw;
+    width: 100%;
+    padding-top: 8px;
+  }
+  
+  footer p {
+    font-size: 20px;
+  }
+    .filter-mobile {
+      display: block;
+    }
+  
+    #order-mobile {
+      display: block;
+    }
+  
+    #container-search-mobile {
+      display: block;
+    }
+    
+    .navigation-mobile {
+      font-size: 23px;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 5px 9px 7px ;
+      }
+      
+      input[type="checkbox"] {
+        margin-right: 8px; 
+      }
+  
+    .order-select {
+      width: 230px;
+      height: 28px;
+      padding-left: 5px;
+      font-size: 23px;
+    }
+  
+      .icon-expanded-suits {
+        font-size: 15px;
+        font-weight: bold;
+        margin-left: 130px;
+      }
+      
+      .icon-expanded-arcane {
+        font-size: 15px;
+        font-weight: bold;
+        margin-left:  100px;
+    }
+
+  
+    header {
+      height: 100px;
+      justify-content: flex-start;
+    }
+    #logo {
+      width: 25vw;
+      padding: 0;
+      margin-top: 1vw;
+      margin-left: 115%;
+    }
+  
+    .mobile-menu {
+      position: fixed;
+      z-index: 1;
+      background-color: rgba(61,92,120, 0.9);
+      width: 45%;
+      height: 100%;
+      margin: 0;
+    }
+  
+    .navigation {
+    display: none;
+    }
+  
+    #container-search {
+      display: none;
+    }
+  
+    .mobile-menu-icon {
+      display: flex;
+      justify-content: center;
+    }
+  
+    .mobile-menu-icon button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      margin-left: 1vw;
+    }
+  
+    .open {
+      display: block;
+    }
+
+    .filter-title {
+      font-size: 23px;
+      padding: 0px 9px ;
+    }
+  
+    .filter-options, .filter-options-arcane {
+      font-size: 21px;
+      margin: 0;
+      padding: 2px 0px 0px 15px;
+    }
+  
+  option {
+   font-size: 21px;
+   margin: 0;
+ }
+ 
+  #filters-and-order {
+    display: none;
+  }
+  
+  .search {
+    font-size: 19px;
+  }
+  
+  .search-input {
+    width: 85vw;
+    height: 4vw;
+    margin-left: 5.5vw;
+    }
+  
+    #cards-container {
+      display: grid;
+      grid-template-columns: repeat(3, 29%);
+      grid-gap: 38px;
+      margin: 0;
+      margin-bottom: 10vw;
+    }
+  
+    #cards-container img {
+      width: 175px;
+      height: 280px;
+      margin: 0;
+    }
+  
+    .flip-container {
+      width: 175px;
+      height: 280px;
+      margin: 0;
+    }
+  
+    .cards-back {
+      width: 175px;
+      height: 280px;
+      margin: 0;
+    }
+  
+    .card-info,
+    .card-name {
+      font-size: 20px;
+    }
+  
+    .card-button {
+      font-size: 14px;
+      width: 15vw;
+      height: 5vw;
+      margin-top: 6%;
+    }
+  
+    #modal {
+      width: 85vw;
+      height: 120vw;
+      padding: 1.2rem 2rem 1.3rem 1.3rem;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 0.2fr 0.2fr 0.1fr 1fr;
+      grid-template-areas:
+        "close-modal close-modal close-modal"
+        "img-modal img-modal img-modal"
+        "modal-header modal-header modal-header"
+        "info-card info-card info-card";
+    }
+  
+    .img-modal {
+      width: 28%;
+      height: 80%;
+      margin: 25px 0px 20px;
+    }
+  
+    .info-card {
+      width: 75vw;
+      height: 55vw;
+      margin-top: 10px;
+    }
+  
+    .cartinhas {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+  
+    #percentage{
+      font-size: 15px;
+    }
+  
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      align-items: normal;
+    }
+  
+    #grid-percentage {
+      display: grid;
+      grid-template-columns: 100%;
+    }
+  
+    .icon-github {
+      display: none;
+    }
+  
+   .navigation-about {
+    font-size: 20px;
+    padding: 15px;
+   }
+  
+   #figure-about {
+    width: 70vw;
+    margin-right: 4vw;
+    margin-top: 0px;
+  }
+  
+  #section-about {
+    padding: 35px;
+    width: 82vw;
+    height: 45vw;
+    overflow: auto;
+  }
+  
+  #section-about, p {
+    font-size: 20px;
+    margin-top: 8px;
+    text-indent: 8%
+  }
+  
+  #section-aboute, h2 {
+    font-size: 25px;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+ }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #ffffff70;
+    border-radius: 10px;
+  }
 }
 
 /* Para desktops e dispositivos maiores */
