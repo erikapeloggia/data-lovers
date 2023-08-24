@@ -658,7 +658,7 @@ export default {
       "meaning_up": "Utility, serviceableness, interest, responsibility, rectitude-all on the normal and external plane.",
       "meaning_rev": "inertia, idleness, repose of that kind, stagnation; also placidity, discouragement, carelessness.",
       "desc": "He rides a slow, enduring, heavy horse, to which his own aspect corresponds. He exhibits his symbol, but does not look therein.",
-      "img": "./assets/deck/pentacles/KnightofPentacles.png"
+      "img": "./assets/deck/pentacles/KnightOfPentacles.png"
     },
     {
       "name": "Queen of\n" + "Pentacles",
