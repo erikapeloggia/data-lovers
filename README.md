@@ -16,7 +16,7 @@
 
 ***
 <p align="center">
-<img src="../data-lovers/src/assets/title-readme.png" alt="Divine Oracle" />
+<img src="./src/assets/title-readme.png" alt="Divine Oracle" />
 </p>
 
 ***
@@ -29,11 +29,11 @@ O projeto em questão é uma aplicação web criada como parte do bootcamp da La
 
 Dentre os vários temas disponibilizados pela Laboratoria para realização do projeto, nós escolhemos o tema Tarot. O Divine Oracle dá acesso aos usuários a todas as cartas do deck -baralho- do tarot, mostrando as principais características e significados das cartas a fim de consulta. Com isso, os usuários podem pesquisar pelo nome da carta, filtrar pelo naipe, arcanos e ordenar pela numeração da carta (do maior para o menor e do menor para o maior) para facilitar a busca e compreensão.
 
-### 3. Sobre o tema e usuários
+## 3. Sobre o tema e usuários
 
 Os principais usuários do Divine Oracle são tarotistas profissionais, aprendizes de tarot e pessoas interessadas em consultar os significados das cartas de tarot. Com isso, criamos as seguintes histórias dos usuários para desenvolver o projeto tendo como base as suas reais necessidades: 
 
-####História usuário 1
+### História usuário 1
 
 <aside>
 📎 Como tarotista eu quero buscar o significado das cartas para realizar as minhas consultas.
@@ -47,7 +47,7 @@ O que deve acontecer para considerarmos que esta história satisfaz as necessida
 - Eu quero visualizar o significado das cartas com a face para cima e reverso;
 - Eu quero poder consultar facilmente através de qualquer dispositivo.
 <br>
-####História usuário 2
+### História usuário 2
 
 <aside>
 📎 Como aprendiz de tarot eu quero conhecer sobre todas as cartas para complementar os estudos.
@@ -56,6 +56,7 @@ O que deve acontecer para considerarmos que esta história satisfaz as necessida
 <br>
 
 **Critérios de aceitação**
+
   O que deve acontecer para considerarmos que esta história satisfaz as necessidades do usuário
 
   - Eu quero poder visualizar todas as cartas de tarot;
@@ -64,7 +65,7 @@ O que deve acontecer para considerarmos que esta história satisfaz as necessida
   - Eu quero poder consultar facilmente através de qualquer dispositivo.
 <br>
 
-####História usuário 3
+### História usuário 3
 
 <aside>
 📎 Como aprendiz de tarot eu quero saber quais cartas são do tipo arcano menor e arcano maior para entender melhor a sua influência.
@@ -79,7 +80,7 @@ O que deve acontecer para considerarmos que esta história satisfaz as necessida
 - Eu quero poder consultar facilmente através de qualquer dispositivo.
 <br>
 
-####História usuário 4
+### História usuário 4
 
 <aside>
 📎 Como tarotista, quero consultar as cartas por naipe para eu poder avaliar a relevância de cada grupo.
@@ -95,7 +96,7 @@ O que deve acontecer para considerarmos que esta história satisfaz as necessida
 - Eu quero poder consultar facilmente através de qualquer dispositivo.
 <br>
 
-####História usuário 5
+### História usuário 5
 
 <aside>
 📎 Como tarotista eu quero pesquisar a carta pelo seu nome para encontrar uma carta específica.
@@ -125,19 +126,19 @@ O protótipo foi desenvolvido levando em consideração as necessidades dos usu�
 
 ### Protótipo de baixa fidelidade
 <p align="center">
-<img src="../data-lovers/src/assets/Protótipo-Desktop-1.png" alt="Protótipo de baixa fidelidade"/>
+<img src="./src/assets/Protótipo-Desktop-1.png" alt="Protótipo de baixa fidelidade"/>
 </p>
 
 ### Protótipo de alta fidelidade
 
 **Desktop**
 <p align="center">
-<img src="../data-lovers/src/assets/Protótipo-Desktop-2.gif" alt="Protótipo de alta fidelidade - Dektop" />
+<img src="./src/assets/Protótipo-Desktop-2.gif" alt="Protótipo de alta fidelidade - Dektop" />
 </p>
 
 **Mobile**
 <p align="center">
-<img src="../data-lovers/src/assets/Protótipo-Mobile-1.png" alt="Protótipo de alta fidelidade - Mobile" width="250" style= "margin-right:80px"/> <img src="../data-lovers/src/assets/Protótipo-Mobile-2.png" alt="Protótipo de alta fidelidade - Mobile" width="250"/>
+<img src="./src/assets/Protótipo-Mobile-1.png" alt="Protótipo de alta fidelidade - Mobile" width="250" style= "margin-right:80px"/> <img src="./src/assets/Protótipo-Mobile-2.png" alt="Protótipo de alta fidelidade - Mobile" width="250"/>
 </p>
 
 ## 5. **Testes de usabilidade**
@@ -170,6 +171,7 @@ Para que pudéssemos ter um bom aproveitamento dos dados a serem manipulados seg
 <p align="center">
 <img src="" alt="Versão final do projeto"/>
 </p>
+
 ## 7. Testes unitários
 
 Foram realizados 5 testes unitários havendo uma cobertura de 100%.
