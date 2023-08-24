@@ -6,10 +6,10 @@
 * [2. Resumo do projeto](#2-resumo-do-projeto)
 * [3. Sobre o tema e usuários](#3-sobre-o-tema-e-usuários)
 * [4. Protótipos](#4-protótipos)
-* [5. Testes de usabilidade](#6-testes-de-usabilidade)
-* [6. Interface do projeto](#6-interface-do-projeto)
+* [5. Testes de usabilidade](#5-testes-de-usabilidade)
+* [6. Interface do projeto e objetivos alcançados](#6-interface-do-projeto-e-objetivos-alcançados)
 * [7. Testes unitários](#7-testes-unitários)
-* [8. Tecnologias utilizadas](#7-tecnologias-utilizadas)
+* [8. Tecnologias utilizadas](#8-tecnologias-utilizadas)
 * [9. Melhorias futuras](#9-melhorias-futuras)
 * [Créditos](#créditos)
 * [Autores](#autores)
@@ -23,11 +23,11 @@
 
 ## 1. Prefácio
 
-O projeto em questão é uma aplicação web criada como parte do bootcamp da Laboratoria, em que o seu principal objetivo é visualizar um conjunto de dados fornecido pela Laboratoria que permite os usuários pesquisarem, filtrarem e ordenarem as informações de acordo com as suas necessidades. A ideia é visualizar os dados através de uma interface amigável e intuitiva. 
+O projeto em questão é uma aplicação web criada como parte do bootcamp da Laboratoria, em que o seu principal objetivo é visualizar um conjunto de dados fornecidos que permite os usuários pesquisarem, filtrarem e ordenarem as informações de acordo com as suas necessidades. A ideia é visualizar os dados através de uma interface amigável e intuitiva. 
  
 ## 2. Resumo do projeto
 
-Dentre os vários temas disponibilizados pela Laboratoria para realização do projeto, nós escolhemos o tema Tarot. O Divine Oracle dá acesso aos usuários a todas as cartas do deck -baralho- do tarot, mostrando as principais características e significados das cartas a fim de consulta. Com isso, os usuários podem pesquisar pelo nome da carta, filtrar pelo naipe, arcanos e ordenar pela numeração da carta (do maior para o menor e do menor para o maior) para facilitar a busca e compreensão.
+Dentre os vários temas disponibilizados pela Laboratoria para realização do projeto, nós escolhemos o tema Tarot. O Divine Oracle dá acesso aos usuários à todas as cartas do deck - baralho - do tarot, mostrando as principais características e significados das cartas a fim de consulta. Com isso, os usuários podem pesquisar pelo nome da carta, filtrar pelo naipe, arcanos e ordenar pela numeração da carta (do maior para o menor e do menor para o maior) para facilitar a busca e compreensão.
 
 ## 3. Sobre o tema e usuários
 
@@ -38,74 +38,65 @@ Os principais usuários do Divine Oracle são tarotistas profissionais, aprendiz
 <aside>
 📎 Como tarotista eu quero buscar o significado das cartas para realizar as minhas consultas.
 </aside>
+
 <br>
 
 **Critérios de aceitação**
 
-O que deve acontecer para considerarmos que esta história satisfaz as necessidades do usuário
-
 - Eu quero visualizar o significado das cartas com a face para cima e reverso;
 - Eu quero poder consultar facilmente através de qualquer dispositivo.
-<br>
+
 ### História usuário 2
 
 <aside>
 📎 Como aprendiz de tarot eu quero conhecer sobre todas as cartas para complementar os estudos.
-
 </aside>
+
 <br>
 
 **Critérios de aceitação**
-
-  O que deve acontecer para considerarmos que esta história satisfaz as necessidades do usuário
 
   - Eu quero poder visualizar todas as cartas de tarot;
   - Eu quero consultar uma carta pelo seu nome;
   - Eu quero consultar a descrição de cada carta.
   - Eu quero poder consultar facilmente através de qualquer dispositivo.
-<br>
 
 ### História usuário 3
 
 <aside>
 📎 Como aprendiz de tarot eu quero saber quais cartas são do tipo arcano menor e arcano maior para entender melhor a sua influência.
 </aside>
+
 <br>
 
 **Critérios de aceitação**
 
-O que deve acontecer para considerarmos que esta história satisfaz as necessidades do usuário
-
 - Eu quero poder filtrar as cartas por tipo arcano menor e arcano maior;
 - Eu quero poder consultar facilmente através de qualquer dispositivo.
-<br>
 
 ### História usuário 4
 
 <aside>
 📎 Como tarotista, quero consultar as cartas por naipe para eu poder avaliar a relevância de cada grupo.
 </aside>
+
 <br>
 
 **Critérios de aceitação**
 
-O que deve acontecer para considerarmos que esta história satisfaz as necessidades do usuário
-
 - Eu quero poder filtrar as cartas pelo seu naipe;
 - Eu quero poder visualizar as informações sobre as cartas, como: significado, naipe e valor;
 - Eu quero poder consultar facilmente através de qualquer dispositivo.
-<br>
 
 ### História usuário 5
 
 <aside>
 📎 Como tarotista eu quero pesquisar a carta pelo seu nome para encontrar uma carta específica.
 </aside>
+
 <br>
 
 **Critérios de aceitação**
-
-O que deve acontecer para considerarmos que esta história satisfaz as necessidades do usuário
 
 - Eu quero um campo para pesquisar uma carta pelo seu nome;
 - Eu quero visualizar o significado das cartas com a face para cima e reverso;
@@ -117,10 +108,10 @@ O que deve acontecer para considerarmos que esta história satisfaz as necessida
 - O código tem, e passa, pelos testes unitários e cobrem um mínimo de 70% de statements, functions, lines e branches;
 - O código está no repositório;
 - O projeto deverá ser implantado no GitHub pages;
-- O projeto foi testado com pelo menos X usuários e foram realizadas as melhorias necessárias identificadas no teste de usabilidade;
+- O projeto foi testado com pelo menos 5 usuários e foram realizadas as melhorias necessárias identificadas no teste de usabilidade;
 - UI: É responsivo.
 
-## 4. Protótipo
+## 4. Protótipos
 
 O protótipo foi desenvolvido levando em consideração as necessidades dos usuários, para que eles pudessem encontrar as informações sobre as cartas de forma intuitiva e fácil.  Pensando na praticidade, escolhemos dispor todas as cartas com parte das informações no verso da carta e as demais informações no modal que pode ser acessada através do botão _learn more_.
 
@@ -137,7 +128,8 @@ O protótipo foi desenvolvido levando em consideração as necessidades dos usu�
 </p>
 
 **Mobile**
-<p align="center">
+
+<p>
 <img src="./src/assets/Protótipo-Mobile-1.png" alt="Protótipo de alta fidelidade - Mobile" width="250" style= "margin-right:80px"/> <img src="./src/assets/Protótipo-Mobile-2.png" alt="Protótipo de alta fidelidade - Mobile" width="250"/>
 </p>
 
@@ -152,9 +144,9 @@ Sendo assim, implementamos as alterações na ordenação, indicando que seria u
 Para que pudéssemos ter um bom aproveitamento dos dados a serem manipulados seguimos da seguinte forma:
 
 - Criamos as histórias dos usuários para compreender o que seria buscado;
-- Fizemos o protótipo de baixa fidelidade para testarmos as primeiras ideias de forma rápida enquanto o protótipo de alta fidelidade foi criado para simular uma experiência mais realista;
+- Fizemos o protótipo de baixa fidelidade para testarmos as primeiras ideias de forma rápida, enquanto o protótipo de alta fidelidade foi criado para simular uma experiência mais realista;
 - Realizamos os testes de usabilidade para avaliar como os usuários interagem com o produto identificando possíveis problemas de uso e melhorias.
-- O desenvolvimento foi realizado baseado nas etapas anteriores, levando em consideração os feedbacks e fazendo adaptações conforme necessidades.
+- O desenvolvimento foi realizado baseado nas etapas anteriores, levando em consideração os feedbacks e fazendo adaptações conforme a necessidade.
 
 ### **Os objetivos gerais alcançados no projeto:**
 
@@ -164,19 +156,19 @@ Para que pudéssemos ter um bom aproveitamento dos dados a serem manipulados seg
 
 [✔] Ser *responsiva*, ou seja, deve ser visualizada sem problemas a partir de diversos tamanhos de tela: celulares, tablets, notebooks, etc.
 
-[✔] Que a interface siga os fundamentos de *visual design*.
+[✔] Que a interface siga os fundamentos de *visual design*;
 
 [✔] Testes unitários cobrirem um mínimo de 70% de statements, functions, lines e branches.
 
 <p align="center">
-<img src="" alt="Versão final do projeto"/>
+<img src="./src/assets/data-lovers-divine.gif" alt="Versão final do projeto"/>
 </p>
 
 ## 7. Testes unitários
 
-Foram realizados 5 testes unitários havendo uma cobertura de 100%.
-<p align="center">
-<img src="" alt="Testes unitários"/>
+Foram realizados testes unitários havendo uma cobertura de 100%.
+<p>
+<img src="./src/assets/Test.png" alt="Testes unitários"/>
 </p>
  
 

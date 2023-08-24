@@ -89,6 +89,10 @@ describe('numericalOrder', () => {
   it('returns `ordering from major to minor`', () => {
     expect(numericalOrder("major-value", tarot)).toStrictEqual([tarot[3], tarot[2], tarot[1], tarot[0]]);
   });
+
+  it('returns `ordering from major to minor`', () => {
+    expect(numericalOrder("major-minor", tarot)).toStrictEqual(tarot);
+  });
 });
 
 describe("calculatePercentage", () => {
