@@ -39,9 +39,11 @@ Os principais usuários do Divine Oracle são tarotistas profissionais, aprendiz
 📎 Como tarotista eu quero buscar o significado das cartas para realizar as minhas consultas.
 </aside>
 
-<br>
+<p> 
 
-**Critérios de aceitação**
+**Critérios de aceitação** 
+
+</p>
 
 - Eu quero visualizar o significado das cartas com a face para cima e reverso;
 - Eu quero poder consultar facilmente através de qualquer dispositivo.
@@ -52,14 +54,17 @@ Os principais usuários do Divine Oracle são tarotistas profissionais, aprendiz
 📎 Como aprendiz de tarot eu quero conhecer sobre todas as cartas para complementar os estudos.
 </aside>
 
-<br>
+<p>
 
 **Critérios de aceitação**
+
+</p>
 
   - Eu quero poder visualizar todas as cartas de tarot;
   - Eu quero consultar uma carta pelo seu nome;
   - Eu quero consultar a descrição de cada carta.
   - Eu quero poder consultar facilmente através de qualquer dispositivo.
+
 
 ### História usuário 3
 
@@ -67,12 +72,15 @@ Os principais usuários do Divine Oracle são tarotistas profissionais, aprendiz
 📎 Como aprendiz de tarot eu quero saber quais cartas são do tipo arcano menor e arcano maior para entender melhor a sua influência.
 </aside>
 
-<br>
+<p>
 
 **Critérios de aceitação**
 
+</p>
+
 - Eu quero poder filtrar as cartas por tipo arcano menor e arcano maior;
 - Eu quero poder consultar facilmente através de qualquer dispositivo.
+
 
 ### História usuário 4
 
@@ -80,9 +88,11 @@ Os principais usuários do Divine Oracle são tarotistas profissionais, aprendiz
 📎 Como tarotista, quero consultar as cartas por naipe para eu poder avaliar a relevância de cada grupo.
 </aside>
 
-<br>
+<p>
 
 **Critérios de aceitação**
+
+</p>
 
 - Eu quero poder filtrar as cartas pelo seu naipe;
 - Eu quero poder visualizar as informações sobre as cartas, como: significado, naipe e valor;
@@ -94,9 +104,11 @@ Os principais usuários do Divine Oracle são tarotistas profissionais, aprendiz
 📎 Como tarotista eu quero pesquisar a carta pelo seu nome para encontrar uma carta específica.
 </aside>
 
-<br>
+<p>
 
 **Critérios de aceitação**
+
+</p>
 
 - Eu quero um campo para pesquisar uma carta pelo seu nome;
 - Eu quero visualizar o significado das cartas com a face para cima e reverso;
