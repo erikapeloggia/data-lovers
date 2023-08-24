@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Divine Oracle</title>
+    <link rel="icon" href="../assets/icon-do.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="all-content">
+    <header>
+      <div class="mobile-menu-icon">
+        <button id="mobileMenuButton">
+          <img src="./assets/mobile-icon.svg" alt="Menu mobile">
+        </button>
+      </div>
+      <a href="index.html"><img id="logo" src="../assets/title.png" alt="Divine Oracle" /></a>
+      <nav class="nav-bar">
+        <a class="navigation" href="cards.html">Home</a>
+        <a class="navigation" href="about.html">About</a>
+        
+      </nav>
+      <div id="container-search">
+        <div class="search-input">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input class="search" id="search" type="text" placeholder="Find your tarot card" />
+        </div>
+      </div>
+    </header>
+    
+    <main>
+    
+      <div id="container-search-mobile">
+        <div class="search-input">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input class="search" id="search-mobile" type="text" placeholder="Find your tarot card" />
+        </div>
+      </div>
+    
+      <div class="mobile-menu">
+        <a class="navigation-mobile" href="cards.html">Home</a>
+        <a class="navigation-mobile" href="about.html">About</a>
+
+        <div class="filter-mobile">
+          <div class="filter">
+            <h3 class="filter-title">Suits <i class="fa-solid fa-chevron-down icon-expanded-suits" ></i></h3>
+            <form class="filter-options">
+              <label><input type="checkbox" name="suit" value="wands" />Wands</label>
+              <label><input type="checkbox" name="suit" value="cups" />Cups</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="suit"
+                  value="pentacles"
+                />Pentacles</label
+              >
+              <label
+                ><input type="checkbox" name="suit" value="swords" />Swords</label
+              >
+            </form>
+          </div>
+          
+          <div class="filter">
+          <h3 class="filter-title">Arcane <i class="fa-solid fa-chevron-down icon-expanded-arcane"></i></h3>
+          <form class="filter-options-arcane">
+            <label><input type="checkbox" name="type" value="major" />Major</label>
+            <label><input type="checkbox" name="type" value="minor" />Minor</label>
+          </form>
+        </div>
+  
+          <form>
+            <select class="order-select">
+              <option value="">Numerical Order</option>
+              <option value="major-value">Major - Minor (78 - 0)</option>
+              <option value="minor-value">Minor - Major (0 - 78)</option>
+            </select>
+          </form>
+          </div>
+  
+      </div>
+
+      <section id="filters-and-order">
+        <div class="filter">
+          <h3 class="filter-title">Suits <i class="fa-solid fa-chevron-down icon-expanded-suits"></i></h3>
+          <form class="filter-options">
+            <label><input type="checkbox" name="suit" value="wands" />Wands</label>
+            <label><input type="checkbox" name="suit" value="cups" />Cups</label
+            >
+            <label><input type="checkbox" name="suit" value="pentacles" />Pentacles</label>
+            <label><input type="checkbox" name="suit" value="swords" />Swords</label
+            >
+          </form>
+        </div>
+        
+        <div class="filter">
+        <h3 class="filter-title">Arcane <i class="fa-solid fa-chevron-down icon-expanded-arcane" ></i></h3>
+        <form class="filter-options-arcane">
+          <label><input type="checkbox" name="type" value="major" />Major</label>
+          <label><input type="checkbox" name="type" value="minor" />Minor</label>
+        </form>
+      </div>
+
+        <form>
+          <select class="order-select">
+            <option value="">Numerical Order</option>
+            <option value="major-value">Major - Minor (78 - 0)</option>
+            <option value="minor-value">Minor - Major (0 - 78)</option>
+          </select>
+        </form>
+      </section>
+      
+      <section class="deck">
+        <div id="grid-percentage">
+          <p id="percentage"></p>
+        </div> 
+        <div id="cards-container"></div> 
+        <div id="grid-message-error">
+          <p id="message-error">No Match Found</p>  
+        </div>     
+      </section>
+      <div id="fade" class="hide"></div>
+      <div id="modal" class="hide"></div>
+    </main>
+    </div>
+    <footer>
+      <div class="footer-title">
+        <p>© Desenvolvido por:</p>
+        <p>Ana Ferreira <a href="https://github.com/anabfer" target="_blank"><i class="fa-brands fa-github"></i></a> | Erika Peloggia <a href="https://github.com/erikapeloggia" target="_blank"><i class="fa-brands fa-github"></i></a> | Iana Rodrigues <a href="https://github.com/ianarodrigues" target="_blank"><i class="fa-brands fa-github"></i></a></p>
+      </div>
+
+      <div class="footer-mobile">
+        <p>© Desenvolvido por:</p>
+        <p>Ana Ferreira <a href="https://github.com/anabfer" target="_blank"><i class="fa-brands fa-github"></i></a> | Erika Peloggia <a href="https://github.com/erikapeloggia" target="_blank"><i class="fa-brands fa-github"></i></a> <br> Iana Rodrigues <a href="https://github.com/ianarodrigues" target="_blank"><i class="fa-brands fa-github"></i></a></p>
+      </div>
+    </footer>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
